@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music & Arts Programs - Siang Tian Elementary School</title>
+    <title>Siang Tian Elementary School</title>
     <style>
-        /* Core Styling & Color Palette (Matches Homepage) */
+        /* Core Styling & Color Palette */
         :root {
             --primary-green: #1b4d3e; /* Deep Forest Green */
             --accent-green: #2e7d32; /* Leaf Green */
@@ -28,77 +28,134 @@
             line-height: 1.6;
         }
 
-        /* Sub-page Header Banner */
-        .sub-hero {
-            background: linear-gradient(rgba(46, 125, 50, 0.5), rgba(27, 77, 62, 0.7)), 
-                        url('music-banner.jpg'); /* Optional banner background photo */
+        /* Hero Header Banner with Light Overlay & Bigger Text */
+        .hero {
+            background: linear-gradient(rgba(46, 125, 50, 0.40), rgba(27, 77, 62, 0.55)), 
+                        url('school-banner.jpg');
             background-size: cover;
             background-position: center;
-            background-color: var(--primary-green);
             color: white;
             text-align: center;
-            padding: 80px 20px;
+            padding: 120px 20px;
         }
 
-        .sub-hero h1 {
-            font-size: 3rem;
+        .hero h1 {
+            font-size: 3.8rem;
             font-weight: 800;
             margin-bottom: 15px;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+            letter-spacing: 0.5px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
         }
 
-        .sub-hero p {
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.2rem;
-            opacity: 0.95;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        .hero h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
         }
 
-        /* Main Content Container */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 50px 20px;
+        .hero p {
+            max-width: 850px;
+            margin: 0 auto 40px auto;
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1.8;
+            opacity: 1;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
         }
 
-        /* Back to Home Button Link */
-        .back-home {
+        /* Button Container */
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* Shared Button Styles */
+        .btn {
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
             text-decoration: none;
-            color: var(--accent-green);
-            font-weight: 600;
-            margin-bottom: 30px;
-            transition: color 0.2s ease;
+            padding: 14px 32px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.2s ease-in-out;
         }
 
-        .back-home:hover {
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        /* Facebook Button */
+        .fb-button {
+            background-color: #1877f2;
+            color: white;
+        }
+
+        .fb-button:hover {
+            background-color: #1565c0;
+        }
+
+        /* Google Maps Button */
+        .maps-button {
+            background-color: #ffffff;
             color: var(--primary-green);
-            text-decoration: underline;
         }
 
-        /* Music Hub Grid (2 Columns Side-by-Side) */
-        .music-grid {
+        .maps-button:hover {
+            background-color: #f7fafc;
+        }
+
+        /* Section Layouts */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-green);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-green);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Grid for Feature Activities */
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
 
-        /* Instrument Cards Setup */
-        .instrument-link {
+        /* Clickable Card Link Wrapper */
+        .card-link {
             text-decoration: none;
             color: inherit;
             display: block;
-            border-radius: 16px;
+            border-radius: 12px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .instrument-card {
+        .card {
             background-color: var(--card-white);
-            border-radius: 16px;
+            border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.04);
             height: 100%;
@@ -108,110 +165,215 @@
             transition: border-color 0.3s ease;
         }
 
-        .instrument-link:hover {
-            transform: translateY(-8px);
+        .card-link:hover {
+            transform: translateY(-5px);
         }
-
-        .instrument-link:hover .instrument-card {
-            box-shadow: 0 15px 30px rgba(27, 77, 62, 0.15);
+        
+        .card-link:hover .card {
+            box-shadow: 0 12px 25px rgba(27, 77, 62, 0.12);
             border-color: var(--accent-green);
         }
 
-        .img-box {
+        .card-link:focus-visible {
+            outline: 3px solid var(--accent-green);
+            outline-offset: 5px;
+            border-radius: 12px;
+        }
+
+        /* Image Box Setup */
+        .card-img-box {
             width: 100%;
-            height: 250px;
+            height: 220px;
             background-size: cover;
             background-position: center;
             background-color: #e2e8f0;
         }
 
-        .card-body {
-            padding: 30px;
+        .card-content {
+            padding: 25px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
         }
 
-        .card-body h2 {
-            font-size: 1.6rem;
+        .card-content h3 {
+            font-size: 1.3rem;
             color: var(--primary-green);
             margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .card-body p {
+        .card-content p {
             color: var(--text-light);
-            font-size: 1rem;
-            margin-bottom: 25px;
-            flex-grow: 1;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
         }
 
-        .action-button {
+        .view-more-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-green);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: auto;
+        }
+
+        .card-link:hover .view-more-label {
+            text-decoration: underline;
+        }
+
+        /* Mission & Vision Styling */
+        .mv-section {
             background-color: var(--primary-green);
             color: white;
-            text-align: center;
-            padding: 12px 20px;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: background-color 0.2s ease;
-            box-shadow: 0 4px 10px rgba(27, 77, 62, 0.2);
+            border-radius: 16px;
+            padding: 50px;
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            box-shadow: 0 10px 30px rgba(27, 77, 62, 0.15);
         }
 
-        .instrument-link:hover .action-button {
-            background-color: var(--accent-green);
+        .mv-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #fff;
+            border-left: 4px solid #fff;
+            padding-left: 12px;
         }
 
-        /* Responsive Tweaks */
-        @media (max-width: 600px) {
-            .sub-hero h1 { font-size: 2.2rem; }
-            .container { padding: 30px 15px; }
+        .mv-box p {
+            opacity: 0.9;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero h2 { font-size: 1.2rem; }
+            .hero p { font-size: 1.1rem; }
+            .mv-section { padding: 30px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- SUB-PAGE HEADER BANNER -->
-    <header class="sub-hero">
-        <h1>Music & Arts Department</h1>
-        <p>Cultivating musical harmony, dedication, and creative self-expression in every student at Siang Tian.</p>
+    <!-- HERO HEADER BANNER WITH LIGHT OVERLAY AND LARGE FONT -->
+    <header class="hero">
+        <h1>Welcome to Siang Tian Elementary School</h1>
+        <h2>Erlin Township, Changhua County, Taiwan</h2>
+        <p>Siang Tian Elementary School is a rural ecological school located in Erlin Township, Changhua County, Taiwan. Surrounded by beautiful farmland and nature, we provide students with meaningful learning experiences both inside and outside the classroom.</p>
+        
+        <!-- Button Action Group -->
+        <div class="button-group">
+            <a href="https://www.facebook.com/SiangTain" target="_blank" rel="noopener noreferrer" class="btn fb-button">
+                📱 Visit Our Facebook Page
+            </a>
+
+            <a href="https://www.google.com/maps/place/No.+10-1,+Rulin+Rd,+Xiangtian+Village,+Erlin+Township,+Changhua+County,+526/@23.8741882,120.3736913,17z/data=!3m1!4b1!4m6!3m5!1s0x346eb2c51c49122f:0xe99804368acb2864!8m2!3d23.8741882!4d120.3762662!16s%2Fg%2F11c1zfrcrp" target="_blank" rel="noopener noreferrer" class="btn maps-button">
+                📍 View School Map Location
+            </a>
+        </div>
     </header>
 
-    <!-- MAIN INTERACTIVE HUB CONTENT -->
     <main class="container">
         
-        <!-- Navigation Link to Go Back Home -->
-        <a href="index.html" class="back-home">← Back to Main Campus Website</a>
-
-        <!-- Side-by-Side Choices -->
-        <div class="music-grid">
-
-            <!-- Harmonica Program Pathway -->
-            <a href="harmonica.html" class="instrument-link" aria-label="Explore the Harmonica Program">
-                <div class="instrument-card">
-                    <!-- Put your harmonica photo filename here -->
-                    <div class="img-box" style="background-image: url('harmonica.jpg');"></div>
-                    <div class="card-body">
-                        <h2>🎵 Harmonica Program</h2>
-                        <p>Our long-standing traditional harmonica program fosters rhythm, deep breathing control, and wonderful ensemble teamwork through regular local performances.</p>
-                        <div class="action-button">Explore Harmonica →</div>
+        <!-- FEATURED ACTIVITIES SECTION -->
+        <section>
+            <h2 class="section-title">Our 特色 Activities</h2>
+            <div class="grid">
+                
+                <!-- Soccer Button Card -->
+                <a href="soccer.html" class="card-link" aria-label="View more details about the Soccer activity">
+                    <div class="card">
+                        <div class="card-img-box" style="background-image: url('soccer.jpg');"></div>
+                        <div class="card-content">
+                            <h3>⚽ Soccer</h3>
+                            <p>Students develop teamwork, sportsmanship, and physical fitness through training and competitions.</p>
+                            <span class="view-more-label">View Details →</span>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
 
-            <!-- Violin Program Pathway (Leads to a dedicated violin sub-page) -->
-            <a href="violin.html" class="instrument-link" aria-label="Explore the Violin Program">
-                <div class="instrument-card">
-                    <!-- Put your violin photo filename here -->
-                    <div class="img-box" style="background-image: url('violin.jpg');"></div>
-                    <div class="card-body">
-                        <h2>🎻 Violin Program</h2>
-                        <p>Our dedicated strings curriculum teaches posture, focus, and intricate classical techniques, giving students an exquisite foundation in global musical arts.</p>
-                        <div class="action-button">Explore Violin Dedicated Page →</div>
+                <!-- Rock Climbing Button Card -->
+                <a href="climbing.html" class="card-link" aria-label="View more details about the Rock Climbing activity">
+                    <div class="card">
+                        <div class="card-img-box" style="background-image: url('climbing.jpg');"></div>
+                        <div class="card-content">
+                            <h3>🧗 Rock Climbing</h3>
+                            <p>Students challenge themselves while building courage, confidence, and problem-solving skills.</p>
+                            <span class="view-more-label">View Details →</span>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
 
-        </div>
+                <!-- Unicycle Button Card -->
+                <a href="unicycle.html" class="card-link" aria-label="View more details about the Unicycle activity">
+                    <div class="card">
+                        <div class="card-img-box" style="background-image: url('unicycle.jpg');"></div>
+                        <div class="card-content">
+                            <h3>🚲 Unicycle</h3>
+                            <p>Students improve balance, coordination, and perseverance through regular practice and performances.</p>
+                            <span class="view-more-label">View Details →</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Music (Harmonica & Violin) Button Card -->
+                <a href="music.html" class="card-link" aria-label="View more details about our Music programs">
+                    <div class="card">
+                        <div class="card-img-box" style="background-image: url('music.jpg');"></div>
+                        <div class="card-content">
+                            <h3>🎵 Music & Arts</h3>
+                            <p>Students develop musical talents, creativity, and self-expression through our specialized harmonica and violin programs.</p>
+                            <span class="view-more-label">View Details →</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Rice Field Learning Button Card -->
+                <a href="rice-field.html" class="card-link" aria-label="View more details about the Rice Field Learning activity">
+                    <div class="card">
+                        <div class="card-img-box" style="background-image: url('rice-field.jpg');"></div>
+                        <div class="card-content">
+                            <h3>🌾 Rice Field Learning</h3>
+                            <p>Students experience planting and harvesting rice while learning about agriculture, sustainability, and local culture.</p>
+                            <span class="view-more-label">View Details →</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Bilingual Education Button Card -->
+                <a href="bilingual.html" class="card-link" aria-label="View more details about the Bilingual Education activity">
+                    <div class="card">
+                        <div class="card-img-box" style="background-image: url('bilingual.jpg');"></div>
+                        <div class="card-content">
+                            <h3>🌍 Bilingual Education</h3>
+                            <p>Students strengthen their English communication skills and develop a broader understanding of the world.</p>
+                            <span class="view-more-label">View Details →</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- MISSION & VISION SECTION -->
+        <section class="mv-section">
+            <div class="mv-box">
+                <h3>Our Mission</h3>
+                <p>To provide a caring and inspiring learning environment where every child can learn, grow, and achieve their full potential.</p>
+            </div>
+            <div class="mv-box">
+                <h3>Our Vision</h3>
+                <p>To cultivate confident, responsible, compassionate, and lifelong learners who contribute positively to their community and the world.</p>
+            </div>
+        </section>
 
     </main>
 
