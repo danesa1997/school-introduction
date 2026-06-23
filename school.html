@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Violin Program - Siang Tian Elementary School</title>
+    <style>
+        /* Core Styling & Color Palette (Matches Homepage & Music Hub) */
+        :root {
+            --primary-green: #1b4d3e; /* Deep Forest Green */
+            --accent-green: #2e7d32; /* Leaf Green */
+            --super-light-green: #f0f9f4; /* Light Mint Background */
+            --card-white: #ffffff;
+            --text-dark: #2d3748;
+            --text-light: #5a6a85;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--super-light-green);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Violin Page Header Banner */
+        .violin-hero {
+            background: linear-gradient(rgba(46, 125, 50, 0.45), rgba(27, 77, 62, 0.65)), 
+                        url('violin-banner.jpg'); /* Optional background photo */
+            background-size: cover;
+            background-position: center;
+            background-color: var(--primary-green);
+            color: white;
+            text-align: center;
+            padding: 90px 20px;
+        }
+
+        .violin-hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .violin-hero p {
+            max-width: 750px;
+            margin: 0 auto;
+            font-size: 1.25rem;
+            opacity: 0.95;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 35px;
+            font-weight: 600;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--accent-green);
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+            text-decoration: underline;
+        }
+
+        .nav-split {
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        /* Main Content Styling */
+        .content-block {
+            background-color: var(--card-white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            margin-bottom: 40px;
+        }
+
+        .content-block h2 {
+            color: var(--primary-green);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--super-light-green);
+            padding-bottom: 10px;
+        }
+
+        .content-block p {
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* Feature List (What they learn) */
+        .feature-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+
+        .feature-list li::before {
+            content: "🎻";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1.1rem;
+        }
+
+        /* Showcase Image Box */
+        .showcase-img {
+            width: 100%;
+            height: 400px;
+            background-image: url('violin.jpg'); /* Reuses your violin photo */
+            background-size: cover;
+            background-position: center;
+            border-radius: 16px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .violin-hero h1 { font-size: 2.4rem; }
+            .content-block { padding: 25px; }
+            .showcase-img { height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="violin-hero">
+        <h1>Violin Program</h1>
+        <p>Developing concentration, poise, and standard classical training for young musicians.</p>
+    </header>
+
+    <main class="container">
+        
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <span class="nav-split">/</span>
+            <a href="music.html">Music Hub</a>
+            <span class="nav-split">/</span>
+            <span style="color: var(--text-dark);">Violin</span>
+        </nav>
+
+        <section class="content-block">
+            <h2>About the Program</h2>
+            <p>At Siang Tian Elementary School, our Violin Program provides a rare, excellent opportunity for students to learn a classic string instrument. Playing the violin requires immense discipline, precision, and active listening. Through this program, students build strong focus and persistence that helps them succeed in both music and their academic studies.</p>
+            
+            <p>We invite expert instructors to guide students through individual hand posture adjustments, bow control methods, and reading music notation efficiently.</p>
+        </section>
+
+        <section class="content-block">
+            <h2>What Our Students Learn</h2>
+            <p>Our organized music path spans from foundational posture to performing elegant compositions together as a group:</p>
+            <ul class="feature-list">
+                <li>Proper instrument holding positions and ear training fundamentals.</li>
+                <li>Bow gripping techniques and precise string articulation methods.</li>
+                <li>Reading classical music notation alongside basic rhythm timing.</li>
+                <li>Ensemble teamwork by syncing tempo and tuning harmonies as one team.</li>
+                <li>Confidence building via school activities and local community performances.</li>
+            </ul>
+        </section>
+
+        <div class="showcase-img"></div>
+
+    </main>
+
+</body>
+</html>
