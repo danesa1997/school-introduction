@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About & Philosophy - English Spark</title>
     <style>
-        /* Professional Theme Core Styling & Color Palette */
+        /* Professional Personalized Lavender Theme Palette */
         :root {
-            --bg-main: #e3ebf6;        /* Matching the soft blue lower background from the homepage */
+            --bg-main: #f4f0fa;        /* Light, soft pastel lavender background */
             --bg-hero: #ffffff;        /* Crisp white for the upper banner background */
-            --title-navy: #1a5286;     /* Deep navy blue from your main title */
-            --accent-green: #3b7a3e;   /* Polished forest green from your subtitle */
+            --title-amethyst: #5c3c85; /* Beautiful, deep amethyst purple for main headings */
+            --accent-lavender: #8e70b8;/* Classic lavender tint for links and borders */
+            --highlight-sage: #3b7a3e;  /* Polished sage green for catchy statements */
             --card-white: #ffffff;
-            --text-dark: #223345;      /* Dark charcoal with a subtle navy undertone */
-            --text-light: #5a6e85;
-            --border-soft: #cbd5e1;    /* Clean, soft gray-blue border line */
+            --text-dark: #312a3a;      /* Dark charcoal with a subtle lavender undertone */
+            --border-soft: #eadef7;    /* Delicate lavender border line */
         }
 
         * {
@@ -49,7 +49,7 @@
         .intro-hero h1 {
             font-size: 3.5rem;
             font-weight: 800;
-            color: var(--title-navy);
+            color: var(--title-amethyst);
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 10px;
@@ -58,7 +58,7 @@
         .intro-hero p {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--accent-green);
+            color: var(--accent-lavender);
         }
 
         /* Main Content Layout Container */
@@ -68,12 +68,12 @@
             padding: 40px 20px;
         }
 
-        /* Back to Home Link (Styled like your professional buttons) */
+        /* Back to Home Link (Styled cleanly in theme) */
         .back-home {
             display: inline-flex;
             align-items: center;
             text-decoration: none;
-            background-color: var(--title-navy);
+            background-color: var(--title-amethyst);
             color: #ffffff;
             font-weight: 700;
             text-transform: uppercase;
@@ -82,17 +82,17 @@
             padding: 10px 20px;
             border-radius: 6px;
             margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(26, 82, 134, 0.15);
+            box-shadow: 0 4px 6px rgba(92, 60, 133, 0.15);
             transition: all 0.3s ease;
             border: 2px solid transparent;
         }
 
         .back-home:hover {
             background-color: #ffffff;
-            color: var(--title-navy);
-            border: 2px solid var(--title-navy);
+            color: var(--title-amethyst);
+            border: 2px solid var(--title-amethyst);
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(26, 82, 134, 0.2);
+            box-shadow: 0 6px 12px rgba(92, 60, 133, 0.2);
         }
 
         /* Content Blocks Shared Styling */
@@ -100,9 +100,9 @@
             background-color: var(--card-white);
             border-radius: 12px;
             padding: 40px;
-            box-shadow: 0 4px 15px rgba(26, 82, 134, 0.05);
+            box-shadow: 0 4px 15px rgba(92, 60, 133, 0.05);
             margin-bottom: 35px;
-            border: 1px solid rgba(203, 213, 225, 0.6);
+            border: 1px solid rgba(234, 222, 247, 0.6);
         }
 
         /* Profile Layout Box Specifics */
@@ -113,16 +113,16 @@
             flex-wrap: wrap;
         }
 
-        /* Oval Profile Picture Setup with Transition Capabilities */
+        /* Oval Profile Picture Setup */
         .profile-img-box {
             flex: 0 0 220px;
             height: 220px;
             border-radius: 50%;
             background-size: cover;
             background-position: center;
-            background-color: #f4f7fc;
+            background-color: #f4f0fa;
             border: 4px solid var(--border-soft);
-            box-shadow: 0 4px 10px rgba(26, 82, 134, 0.12);
+            box-shadow: 0 4px 10px rgba(92, 60, 133, 0.12);
             transition: opacity 0.4s ease-in-out;
             opacity: 1;
         }
@@ -134,7 +134,7 @@
 
         .profile-text h2 {
             font-size: 2rem;
-            color: var(--title-navy);
+            color: var(--title-amethyst);
             margin-bottom: 15px;
         }
 
@@ -144,9 +144,21 @@
             margin-bottom: 15px;
         }
 
+        /* Special Catchy Highlighting Style for Key Sentences */
+        .highlight-statement {
+            font-family: 'Georgia', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            font-style: italic;
+            color: var(--highlight-sage);
+            display: block;
+            margin: 15px 0;
+            line-height: 1.5;
+        }
+
         .content-block h3 {
             font-size: 1.7rem;
-            color: var(--title-navy);
+            color: var(--title-amethyst);
             margin-bottom: 20px;
             border-bottom: 2px solid var(--bg-main);
             padding-bottom: 8px;
@@ -155,7 +167,7 @@
         /* Sub-headings for Philosophy Sections */
         .content-block h4 {
             font-size: 1.25rem;
-            color: var(--accent-green);
+            color: var(--accent-lavender);
             margin-top: 20px;
             margin-bottom: 8px;
             display: flex;
@@ -195,6 +207,7 @@
             .content-block { padding: 25px; }
             .profile-section { text-align: center; justify-content: center; }
             .profile-img-box { flex: 0 0 180px; height: 180px; }
+            .highlight-statement { font-size: 1.15rem; }
         }
     </style>
 </head>
@@ -217,8 +230,8 @@
             <div id="rotatingProfilePic" class="profile-img-box"></div>
             <div class="profile-text">
                 <h2>Hi everyone!</h2>
-                <p>My name is <strong>Danesa Mae B. Latonio</strong>, but you can call me <strong>"Nesa"</strong> for short. I’m from the Philippines, and I’ve been teaching for 7 years now! Teaching is not just my profession—it’s my absolute passion.</p>
-                <p>I truly love working with students and helping them learn and grow. There is something incredibly special about seeing a student smile when they finally understand something new. That breakthrough moment always reminds me exactly why I chose this path.</p>
+                <p>My name is <strong>Danesa Mae B. Latonio</strong>, but you can call me <strong>"Nesa"</strong> for short. I’m from the Philippines, and I’ve been teaching for 7 years now! <span class="highlight-statement">Teaching is not just my profession—it’s my absolute passion.</span></p>
+                <p>I truly love working with students and helping them learn and grow. <span class="highlight-statement">There is something incredibly special about seeing a student smile when they finally understand something new.</span> That breakthrough moment always reminds me exactly why I chose this path.</p>
                 <p>Aside from teaching, I love learning about different cultures and meeting new people. I am thrilled to get to know all of you and to share many fun, educational experiences together. Let’s have a great time learning together!</p>
             </div>
         </section>
@@ -227,7 +240,7 @@
         <section class="content-block">
             <h3>My Teaching Philosophy</h3>
             <p class="philosophy-text">
-                I firmly believe that all students can learn and grow with the right guidance and support. Every child brings unique strengths, experiences, and potential to the classroom, and it’s my mission to help each one thrive. Learning is not a one-size-fits-all process—it’s an individual journey that flourishes inside a supportive, respectful, and engaging environment.
+                I firmly believe that all students can learn and grow with the right guidance and support. Every child brings unique strengths, experiences, and potential to the classroom, and it’s my mission to help each one thrive. <span class="highlight-statement">Learning is not a one-size-fits-all process—it’s an individual journey that flourishes inside a supportive, respectful, and engaging environment.</span>
             </p>
             <p class="philosophy-text">
                 To build a classroom where learning is joyful, respectful, and meaningful, I structure our everyday environment around three key principles:
@@ -235,17 +248,17 @@
 
             <h4>✨ Try Our Best & Learn from Mistakes</h4>
             <p class="philosophy-text">
-                We embrace a growth mindset by recognizing that mistakes are an important milestone in the learning journey. I actively encourage students to take creative risks, ask questions, and view challenges as opportunities. By putting forth their best effort and reflecting on their progress, students cultivate long-term resilience and deep self-confidence.
+                We embrace a growth mindset by recognizing that mistakes are an important milestone in the learning journey. I actively encourage students to take creative risks, ask questions, and view challenges as opportunities. <span class="highlight-statement">By putting forth their best effort and reflecting on their progress, students cultivate long-term resilience and deep self-confidence.</span>
             </p>
 
             <h4>✨ Work Together & Help Each Other</h4>
             <p class="philosophy-text">
-                Collaboration is the foundational key to a successful learning community. We learn best when we support one another, listen actively, and celebrate each other’s successes. Through group work, peer feedback, and cooperative projects, students develop crucial social and communication skills that extend far beyond the classroom.
+                Collaboration is the foundational key to a successful learning community. We learn best when we support one another, listen actively, and celebrate each other’s successes. <span class="highlight-statement">Through group work, peer feedback, and cooperative projects, students develop crucial social and communication skills that extend far beyond the classroom.</span>
             </p>
 
             <h4>✨ Create a Kind & Welcoming Space for Everyone</h4>
             <p class="philosophy-text">
-                A safe, inclusive, and respectful environment is essential for meaningful language acquisition. In our classroom, every voice matters and everyone belongs. We honor individual differences, practice active empathy, and uphold kindness in all interactions, ensuring that each student feels valued and completely comfortable expressing themselves.
+                A safe, inclusive, and respectful environment is essential for meaningful language acquisition. In our classroom, every voice matters and everyone belongs. <span class="highlight-statement">We honor individual differences, practice active empathy, and uphold kindness in all interactions, ensuring that each student feels valued and completely comfortable expressing themselves.</span>
             </p>
         </section>
 
