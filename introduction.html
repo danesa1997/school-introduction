@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About & Philosophy - English Spark</title>
     <style>
-        /* Professional Purple Core Styling & Color Palette */
+        /* Professional Lavender Core Styling & Color Palette */
         :root {
-            --bg-purple: #f3f0f7; /* Soft, professional lavender-gray background */
-            --title-plum: #4a2874; /* Deep, rich professional plum/violet */
-            --accent-purple: #7242b3; /* Vibrant grape/violet accent */
+            --bg-lavender: #f4f0fa; /* Very light, soft pastel lavender background */
+            --title-amethyst: #5c3c85; /* Beautiful, clear amethyst purple for primary titles */
+            --accent-lavender: #8e70b8; /* Classic lavender tint for highlights and subheadings */
             --card-white: #ffffff;
-            --text-dark: #2d2538; /* Dark text with a tiny hint of plum */
-            --text-light: #665b73;
-            --border-lavender: #e2daf0;
+            --text-dark: #312a3a; /* Dark charcoal with a subtle lavender undertone */
+            --text-light: #6e647c;
+            --border-soft: #eadef7; /* Very delicate lavender border line */
         }
 
         * {
@@ -24,7 +24,7 @@
         }
 
         body {
-            background-color: var(--bg-purple);
+            background-color: var(--bg-lavender);
             color: var(--text-dark);
             line-height: 1.6;
             display: flex;
@@ -35,19 +35,19 @@
         /* Profile Header Banner */
         .intro-hero {
             width: 100%;
-            background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.65)), 
+            background: linear-gradient(rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.68)), 
                         url('english-spark-banner.jpg');
             background-size: cover;
             background-position: center;
             text-align: center;
             padding: 70px 20px;
-            border-bottom: 2px dashed var(--border-lavender);
+            border-bottom: 2px dashed var(--border-soft);
         }
 
         .intro-hero h1 {
             font-size: 3.5rem;
             font-weight: 900;
-            color: var(--title-plum);
+            color: var(--title-amethyst);
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 10px;
@@ -56,7 +56,7 @@
         .intro-hero p {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--accent-purple);
+            color: var(--accent-lavender);
         }
 
         /* Main Content Layout Container */
@@ -71,7 +71,7 @@
             display: inline-flex;
             align-items: center;
             text-decoration: none;
-            color: var(--title-plum);
+            color: var(--title-amethyst);
             font-weight: 700;
             text-transform: uppercase;
             font-size: 0.95rem;
@@ -81,7 +81,7 @@
         }
 
         .back-home:hover {
-            color: var(--accent-purple);
+            color: var(--accent-lavender);
             text-decoration: underline;
         }
 
@@ -90,9 +90,9 @@
             background-color: var(--card-white);
             border-radius: 12px;
             padding: 40px;
-            box-shadow: 0 4px 15px rgba(74, 40, 116, 0.04);
+            box-shadow: 0 4px 15px rgba(142, 112, 184, 0.05);
             margin-bottom: 35px;
-            border: 1px solid rgba(226, 218, 240, 0.5);
+            border: 1px solid rgba(234, 222, 247, 0.6);
         }
 
         /* Profile Layout Box Specifics */
@@ -108,12 +108,13 @@
             flex: 0 0 220px;
             height: 220px;
             border-radius: 50%;
-            background-image: url('profile.jpg');
+            background-image: url('profile.jpg'); 
             background-size: cover;
             background-position: center;
-            background-color: #f0edf5;
-            border: 4px solid var(--border-lavender);
-            box-shadow: 0 4px 10px rgba(74, 40, 116, 0.1);
+            background-color: #f3effa;
+            border: 4px solid var(--border-soft);
+            box-shadow: 0 4px 10px rgba(142, 112, 184, 0.12);
+            transition: background-image 0.3s ease;
         }
 
         .profile-text {
@@ -123,7 +124,7 @@
 
         .profile-text h2 {
             font-size: 2rem;
-            color: var(--title-plum);
+            color: var(--title-amethyst);
             margin-bottom: 15px;
         }
 
@@ -135,16 +136,16 @@
 
         .content-block h3 {
             font-size: 1.7rem;
-            color: var(--title-plum);
+            color: var(--title-amethyst);
             margin-bottom: 20px;
-            border-bottom: 2px solid var(--bg-purple);
+            border-bottom: 2px solid var(--bg-lavender);
             padding-bottom: 8px;
         }
 
         /* Sub-headings for Philosophy Sections */
         .content-block h4 {
             font-size: 1.25rem;
-            color: var(--accent-purple);
+            color: var(--accent-lavender);
             margin-top: 20px;
             margin-bottom: 8px;
             display: flex;
@@ -203,7 +204,7 @@
 
         <!-- Personal Self Introduction Panel -->
         <section class="content-block profile-section">
-            <div class="profile-img-box"></div>
+            <div id="rotatingProfilePic" class="profile-img-box"></div>
             <div class="profile-text">
                 <h2>Hi everyone!</h2>
                 <p>My name is <strong>Danesa Mae B. Latonio</strong>, but you can call me <strong>"Nesa"</strong> for short. I’m from the Philippines, and I’ve been teaching for 7 years now! Teaching is not just my profession—it’s my absolute passion.</p>
@@ -222,17 +223,17 @@
                 To build a classroom where learning is joyful, respectful, and meaningful, I structure our everyday environment around three key principles:
             </p>
 
-            <h4>🔮 Try Our Best & Learn from Mistakes</h4>
+            <h4>✨ Try Our Best & Learn from Mistakes</h4>
             <p class="philosophy-text">
                 We embrace a growth mindset by recognizing that mistakes are an important milestone in the learning journey. I actively encourage students to take creative risks, ask questions, and view challenges as opportunities. By putting forth their best effort and reflecting on their progress, students cultivate long-term resilience and deep self-confidence.
             </p>
 
-            <h4>🔮 Work Together & Help Each Other</h4>
+            <h4>✨ Work Together & Help Each Other</h4>
             <p class="philosophy-text">
                 Collaboration is the foundational key to a successful learning community. We learn best when we support one another, listen actively, and celebrate each other’s successes. Through group work, peer feedback, and cooperative projects, students develop crucial social and communication skills that extend far beyond the classroom.
             </p>
 
-            <h4>🔮 Create a Kind & Welcoming Space for Everyone</h4>
+            <h4>✨ Create a Kind & Welcoming Space for Everyone</h4>
             <p class="philosophy-text">
                 A safe, inclusive, and respectful environment is essential for meaningful language acquisition. In our classroom, every voice matters and everyone belongs. We honor individual differences, practice active empathy, and uphold kindness in all interactions, ensuring that each student feels valued and completely comfortable expressing themselves.
             </p>
@@ -263,6 +264,26 @@
         </section>
 
     </main>
+
+    <!-- AUTOMATIC PICTURE ROTATION SCRIPT -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            // Expanded list to cycle through 5 profile pictures
+            const profilePictures = [
+                'profile.jpg',
+                'profile2.jpg',
+                'profile3.jpg',
+                'profile4.jpg',
+                'profile5.jpg'
+            ];
+            
+            // Picks a random image from the list of 5
+            const randomImage = profilePictures[Math.floor(Math.random() * profilePictures.length)];
+            
+            // Assigns it to the profile frame
+            document.getElementById('rotatingProfilePic').style.backgroundImage = `url('${randomImage}')`;
+        });
+    </script>
 
 </body>
 </html>
