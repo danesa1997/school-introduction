@@ -31,12 +31,12 @@
         /* Hero Header Banner with School Picture Background */
         .hero {
             background: linear-gradient(rgba(27, 77, 62, 0.85), rgba(27, 77, 62, 0.90)), 
-                        url('school-banner.jpg');
+                        url('school-banner.jpg'); /* Your school photo filename */
             background-size: cover;
             background-position: center;
             color: white;
             text-align: center;
-            padding: 90px 20px;
+            padding: 100px 20px;
         }
 
         .hero h1 {
@@ -55,31 +55,56 @@
 
         .hero p {
             max-width: 800px;
-            margin: 0 auto 30px auto;
+            margin: 0 auto 35px auto;
             font-size: 1.1rem;
             opacity: 0.95;
         }
 
-        /* Facebook Button Link Styling */
-        .fb-button {
+        /* Button Container */
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap; /* Keeps it looking great on mobile screens */
+        }
+
+        /* Shared Button Styles */
+        .btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background-color: #1877f2;
-            color: white;
             text-decoration: none;
             padding: 12px 28px;
             font-size: 15px;
             font-weight: 600;
             border-radius: 25px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             transition: all 0.2s ease-in-out;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+        }
+
+        /* Facebook Button */
+        .fb-button {
+            background-color: #1877f2;
+            color: white;
         }
 
         .fb-button:hover {
             background-color: #1565c0;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Google Maps Button */
+        .maps-button {
+            background-color: #ffffff;
+            color: var(--primary-green);
+        }
+
+        .maps-button:hover {
+            background-color: #f7fafc;
         }
 
         /* Section Layouts */
@@ -114,7 +139,7 @@
             gap: 30px;
         }
 
-        /* Accessible Clickable Card Styles */
+        /* Clickable Card Link Wrapper */
         .card-link {
             text-decoration: none;
             color: inherit;
@@ -135,7 +160,6 @@
             transition: border-color 0.3s ease;
         }
 
-        /* Interactive Hover & Focus States for Accessibility */
         .card-link:hover {
             transform: translateY(-5px);
         }
@@ -183,7 +207,6 @@
             margin-bottom: 15px;
         }
 
-        /* "View More" label button indicator */
         .view-more-label {
             font-size: 0.9rem;
             font-weight: 600;
@@ -239,10 +262,18 @@
         <h2>Erlin Township, Changhua County, Taiwan</h2>
         <p>Siang Tian Elementary School is a rural ecological school located in Erlin Township, Changhua County, Taiwan. Surrounded by beautiful farmland and nature, we provide students with meaningful learning experiences both inside and outside the classroom.</p>
         
-        <!-- School Facebook Page Link Button -->
-        <a href="https://www.facebook.com/SiangTain" target="_blank" rel="noopener noreferrer" class="fb-button">
-            📱 Visit Our Facebook Page
-        </a>
+        <!-- Button Action Group -->
+        <div class="button-group">
+            <!-- School Facebook Page Link Button -->
+            <a href="https://www.facebook.com/SiangTain" target="_blank" rel="noopener noreferrer" class="btn fb-button">
+                📱 Visit Our Facebook Page
+            </a>
+
+            <!-- Google Maps Link Button -->
+            <a href="https://www.google.com/maps/place/No.+10-1,+Rulin+Rd,+Xiangtian+Village,+Erlin+Township,+Changhua+County,+526/@23.8741882,120.3736913,17z/data=!3m1!4b1!4m6!3m5!1s0x346eb2c51c49122f:0xe99804368acb2864!8m2!3d23.8741882!4d120.3762662!16s%2Fg%2F11c1zfrcrp" target="_blank" rel="noopener noreferrer" class="btn maps-button">
+                📍 View School Map Location
+            </a>
+        </div>
     </header>
 
     <main class="container">
