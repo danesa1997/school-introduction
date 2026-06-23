@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About & Philosophy - English Sparks</title>
+    <title>About & Philosophy - English Spark</title>
     <style>
         /* Professional Lavender Core Styling & Color Palette */
         :root {
@@ -32,35 +32,31 @@
             align-items: center;
         }
 
-        /* Profile Header Banner - Styled cleanly to highlight the catchy text */
+        /* Profile Header Banner */
         .intro-hero {
             width: 100%;
-            background-color: transparent;
+            background: linear-gradient(rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.68)), 
+                        url('english-spark-banner.jpg');
+            background-size: cover;
+            background-position: center;
             text-align: center;
-            padding: 80px 20px 60px 20px;
+            padding: 70px 20px;
             border-bottom: 2px dashed var(--border-soft);
         }
 
         .intro-hero h1 {
-            font-size: 4rem; 
-            font-weight: 900; 
-            color: var(--title-amethyst); 
-            text-transform: uppercase; 
-            letter-spacing: 4px; 
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 5px rgba(92, 60, 133, 0.12);
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--title-amethyst);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
         }
 
         .intro-hero p {
-            font-size: 1.4rem; 
-            font-weight: 700; 
-            letter-spacing: 0.5px; 
+            font-size: 1.5rem;
+            font-weight: 700;
             color: var(--accent-lavender);
-            background: rgba(255, 255, 255, 0.6);
-            display: inline-block;
-            padding: 6px 20px;
-            border-radius: 25px;
-            box-shadow: 0 4px 10px rgba(142, 112, 184, 0.04);
         }
 
         /* Main Content Layout Container */
@@ -107,7 +103,7 @@
             flex-wrap: wrap;
         }
 
-        /* Oval Profile Picture Setup with Continuous Crossfading Transitions */
+        /* Oval Profile Picture Setup with Transition Capabilities */
         .profile-img-box {
             flex: 0 0 220px;
             height: 220px;
@@ -117,7 +113,8 @@
             background-color: #f3effa;
             border: 4px solid var(--border-soft);
             box-shadow: 0 4px 10px rgba(142, 112, 184, 0.12);
-            transition: opacity 0.5s ease-in-out; /* Smooth transition when changing pics */
+            /* Added smooth opacity transition for continuous fading loops */
+            transition: opacity 0.4s ease-in-out;
             opacity: 1;
         }
 
@@ -185,8 +182,7 @@
         }
 
         @media (max-width: 600px) {
-            .intro-hero h1 { font-size: 2.8rem; letter-spacing: 2px; }
-            .intro-hero p { font-size: 1.1rem; }
+            .intro-hero h1 { font-size: 2.3rem; }
             .content-block { padding: 25px; }
             .profile-section { text-align: center; justify-content: center; }
             .profile-img-box { flex: 0 0 180px; height: 180px; }
@@ -195,15 +191,19 @@
 </head>
 <body>
 
+    <!-- HERO BANNER -->
     <header class="intro-hero">
-        <h1>ENGLISH SPARKS</h1>
-        <p>Your Daily Dose of English Fun!</p>
+        <h1>About & Philosophy</h1>
+        <p>The Passion and Purpose Behind the Spark!</p>
     </header>
 
+    <!-- CONTENT CONTAINER -->
     <main class="container">
         
+        <!-- Navigation Back Home -->
         <a href="index.html" class="back-home">← Back to Main Hub</a>
 
+        <!-- Personal Self Introduction Panel -->
         <section class="content-block profile-section">
             <div id="rotatingProfilePic" class="profile-img-box"></div>
             <div class="profile-text">
@@ -214,6 +214,7 @@
             </div>
         </section>
 
+        <!-- Structured Teaching Philosophy Section Panel -->
         <section class="content-block">
             <h3>My Teaching Philosophy</h3>
             <p class="philosophy-text">
@@ -239,6 +240,7 @@
             </p>
         </section>
 
+        <!-- Commitment to Teaching Panel -->
         <section class="content-block">
             <h3>Commitment to Teaching</h3>
             <p class="philosophy-text">
@@ -249,6 +251,7 @@
             </p>
         </section>
 
+        <!-- Practical Methodology Quick Highlights Panel -->
         <section class="content-block">
             <h3>How We Learn</h3>
             <p class="philosophy-text">
@@ -263,6 +266,7 @@
 
     </main>
 
+    <!-- LIVE CONTINUOUS PICTURE ROTATION SCRIPT -->
     <script>
         window.addEventListener('DOMContentLoaded', () => {
             const profilePictures = [
@@ -276,24 +280,24 @@
             let currentIndex = 0;
             const profileImgBox = document.getElementById('rotatingProfilePic');
             
-            // Instantly load the first profile picture when loading the page
+            // Instantly display the very first image when the page opens
             profileImgBox.style.backgroundImage = `url('${profilePictures[currentIndex]}')`;
             
-            // Loop switcher functionality
-            function changeImage() {
-                // Step 1: Smoothly fade out the profile element
+            // Core looping rotation system
+            function rotateImage() {
+                // 1. Initiate a smooth blend transition out
                 profileImgBox.style.opacity = 0;
                 
-                // Step 2: Update image file behind the scenes while hidden, then fade it back in
+                // 2. Wait for the fade out to complete (400ms), update the image path, and blend back in
                 setTimeout(() => {
                     currentIndex = (currentIndex + 1) % profilePictures.length;
                     profileImgBox.style.backgroundImage = `url('${profilePictures[currentIndex]}')`;
                     profileImgBox.style.opacity = 1;
-                }, 500); // 500ms coordinates perfectly with CSS opacity settings
+                }, 400); 
             }
             
-            // Keeps running and swapping the picture automatically every 4 seconds
-            setInterval(changeImage, 4000);
+            // Automatically trigger a crossfade loop every 4 seconds (4000ms)
+            setInterval(rotateImage, 4000);
         });
     </script>
 
