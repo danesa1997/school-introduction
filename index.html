@@ -7,12 +7,12 @@
     <style>
         /* Core Styling & Color Palette */
         :root {
-            --primary-green: #1b4d3e; /* Deep Ecological Green */
-            --accent-green: #2e7d32; /* Lively Leaf Green */
-            --cream-bg: #fdfbf7; /* Soft Warm Cream Background */
+            --primary-green: #1b4d3e; /* Deep Forest Green */
+            --accent-green: #2e7d32; /* Leaf Green */
+            --super-light-green: #f0f9f4; /* Super Duper Light Mint Background */
             --card-white: #ffffff;
             --text-dark: #2d3748;
-            --text-light: #718096;
+            --text-light: #5a6a85;
         }
 
         * {
@@ -23,40 +23,63 @@
         }
 
         body {
-            background-color: var(--cream-bg);
+            background-color: var(--super-light-green);
             color: var(--text-dark);
             line-height: 1.6;
         }
 
-        /* Hero / Header Banner */
+        /* Hero Header Banner with School Picture Background */
         .hero {
-            background: linear-gradient(rgba(27, 77, 62, 0.85), rgba(27, 77, 62, 0.95)), 
-                        url('hero-bg.jpg'); /* Your header image file */
+            background: linear-gradient(rgba(27, 77, 62, 0.85), rgba(27, 77, 62, 0.90)), 
+                        url('school-banner.jpg');
             background-size: cover;
             background-position: center;
             color: white;
             text-align: center;
-            padding: 80px 20px;
+            padding: 90px 20px;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             margin-bottom: 10px;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
         .hero h2 {
             font-size: 1.3rem;
             font-weight: 400;
-            color: #cbd5e0;
+            color: #ccebe0;
             margin-bottom: 25px;
         }
 
         .hero p {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 0 auto 30px auto;
             font-size: 1.1rem;
-            opacity: 0.9;
+            opacity: 0.95;
+        }
+
+        /* Facebook Button Link Styling */
+        .fb-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #1877f2;
+            color: white;
+            text-decoration: none;
+            padding: 12px 28px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .fb-button:hover {
+            background-color: #1565c0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
         }
 
         /* Section Layouts */
@@ -91,20 +114,44 @@
             gap: 30px;
         }
 
+        /* Accessible Clickable Card Styles */
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
         .card {
             background-color: var(--card-white);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid transparent;
+            transition: border-color 0.3s ease;
         }
 
-        .card:hover {
+        /* Interactive Hover & Focus States for Accessibility */
+        .card-link:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .card-link:hover .card {
+            box-shadow: 0 12px 25px rgba(27, 77, 62, 0.12);
+            border-color: var(--accent-green);
         }
 
-        /* Image Box setup */
+        .card-link:focus-visible {
+            outline: 3px solid var(--accent-green);
+            outline-offset: 5px;
+            border-radius: 12px;
+        }
+
+        /* Image Box Setup */
         .card-img-box {
             width: 100%;
             height: 220px;
@@ -115,6 +162,10 @@
 
         .card-content {
             padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card-content h3 {
@@ -129,6 +180,22 @@
         .card-content p {
             color: var(--text-light);
             font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        /* "View More" label button indicator */
+        .view-more-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-green);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: auto;
+        }
+
+        .card-link:hover .view-more-label {
+            text-decoration: underline;
         }
 
         /* Mission & Vision Styling */
@@ -137,11 +204,11 @@
             color: white;
             border-radius: 16px;
             padding: 50px;
-            margin-top: 40px;
+            margin-top: 50px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
-            box-shadow: 0 10px 30px rgba(27, 77, 62, 0.2);
+            box-shadow: 0 10px 30px rgba(27, 77, 62, 0.15);
         }
 
         .mv-box h3 {
@@ -158,7 +225,6 @@
             line-height: 1.7;
         }
 
-        /* Responsive adjustments */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
             .mv-section { padding: 30px; }
@@ -167,69 +233,101 @@
 </head>
 <body>
 
+    <!-- HERO HEADER BANNER WITH BACKGROUND PHOTO -->
     <header class="hero">
         <h1>Welcome to Siang Tian Elementary School</h1>
         <h2>Erlin Township, Changhua County, Taiwan</h2>
         <p>Siang Tian Elementary School is a rural ecological school located in Erlin Township, Changhua County, Taiwan. Surrounded by beautiful farmland and nature, we provide students with meaningful learning experiences both inside and outside the classroom.</p>
+        
+        <!-- School Facebook Page Link Button -->
+        <a href="https://www.facebook.com/SiangTain" target="_blank" rel="noopener noreferrer" class="fb-button">
+            📱 Visit Our Facebook Page
+        </a>
     </header>
 
     <main class="container">
         
+        <!-- FEATURED ACTIVITIES SECTION -->
         <section>
             <h2 class="section-title">Our 特色 Activities</h2>
             <div class="grid">
                 
-                <div class="card">
-                    <div class="card-img-box" style="background-image: url('soccer.jpg');"></div>
-                    <div class="card-content">
-                        <h3>⚽ Soccer</h3>
-                        <p>Students develop teamwork, sportsmanship, and physical fitness through training and competitions.</p>
+                <!-- Soccer Button Card -->
+                <a href="soccer.html" class="card-link" aria-label="View more details about the Soccer activity">
+                    <div class="card">
+                        <div class="card-img-box" style="background-image: url('soccer.jpg');"></div>
+                        <div class="card-content">
+                            <h3>⚽ Soccer</h3>
+                            <p>Students develop teamwork, sportsmanship, and physical fitness through training and competitions.</p>
+                            <span class="view-more-label">View Details →</span>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="card">
-                    <div class="card-img-box" style="background-image: url('climbing.jpg');"></div>
-                    <div class="card-content">
-                        <h3>🧗 Rock Climbing</h3>
-                        <p>Students challenge themselves while building courage, confidence, and problem-solving skills.</p>
+                <!-- Rock Climbing Button Card -->
+                <a href="climbing.html" class="card-link" aria-label="View more details about the Rock Climbing activity">
+                    <div class="card">
+                        <div class="card-img-box" style="background-image: url('climbing.jpg');"></div>
+                        <div class="card-content">
+                            <h3>🧗 Rock Climbing</h3>
+                            <p>Students challenge themselves while building courage, confidence, and problem-solving skills.</p>
+                            <span class="view-more-label">View Details →</span>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="card">
-                    <div class="card-img-box" style="background-image: url('unicycle.jpg');"></div>
-                    <div class="card-content">
-                        <h3>🚲 Unicycle</h3>
-                        <p>Students improve balance, coordination, and perseverance through regular practice and performances.</p>
+                <!-- Unicycle Button Card -->
+                <a href="unicycle.html" class="card-link" aria-label="View more details about the Unicycle activity">
+                    <div class="card">
+                        <div class="card-img-box" style="background-image: url('unicycle.jpg');"></div>
+                        <div class="card-content">
+                            <h3>🚲 Unicycle</h3>
+                            <p>Students improve balance, coordination, and perseverance through regular practice and performances.</p>
+                            <span class="view-more-label">View Details →</span>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="card">
-                    <div class="card-img-box" style="background-image: url('harmonica.jpg');"></div>
-                    <div class="card-content">
-                        <h3>🎵 Harmonica</h3>
-                        <p>Students develop musical talents, creativity, and self-expression through harmonica learning and performances.</p>
+                <!-- Harmonica Button Card -->
+                <a href="harmonica.html" class="card-link" aria-label="View more details about the Harmonica activity">
+                    <div class="card">
+                        <div class="card-img-box" style="background-image: url('harmonica.jpg');"></div>
+                        <div class="card-content">
+                            <h3>🎵 Harmonica</h3>
+                            <p>Students develop musical talents, creativity, and self-expression through harmonica learning and performances.</p>
+                            <span class="view-more-label">View Details →</span>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="card">
-                    <div class="card-img-box" style="background-image: url('rice-field.jpg');"></div>
-                    <div class="card-content">
-                        <h3>🌾 Rice Field Learning</h3>
-                        <p>Students experience planting and harvesting rice while learning about agriculture, sustainability, and local culture.</p>
+                <!-- Rice Field Learning Button Card -->
+                <a href="rice-field.html" class="card-link" aria-label="View more details about the Rice Field Learning activity">
+                    <div class="card">
+                        <div class="card-img-box" style="background-image: url('rice-field.jpg');"></div>
+                        <div class="card-content">
+                            <h3>🌾 Rice Field Learning</h3>
+                            <p>Students experience planting and harvesting rice while learning about agriculture, sustainability, and local culture.</p>
+                            <span class="view-more-label">View Details →</span>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="card">
-                    <div class="card-img-box" style="background-image: url('bilingual.jpg');"></div>
-                    <div class="card-content">
-                        <h3>🌍 Bilingual Education</h3>
-                        <p>Students strengthen their English communication skills and develop a broader understanding of the world.</p>
+                <!-- Bilingual Education Button Card -->
+                <a href="bilingual.html" class="card-link" aria-label="View more details about the Bilingual Education activity">
+                    <div class="card">
+                        <div class="card-img-box" style="background-image: url('bilingual.jpg');"></div>
+                        <div class="card-content">
+                            <h3>🌍 Bilingual Education</h3>
+                            <p>Students strengthen their English communication skills and develop a broader understanding of the world.</p>
+                            <span class="view-more-label">View Details →</span>
+                        </div>
                     </div>
-                </div>
+                </a>
 
             </div>
         </section>
 
+        <!-- MISSION & VISION SECTION -->
         <section class="mv-section">
             <div class="mv-box">
                 <h3>Our Mission</h3>
