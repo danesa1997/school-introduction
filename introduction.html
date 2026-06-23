@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About & Philosophy - English Spark</title>
     <style>
-        /* Professional Lavender Core Styling & Color Palette */
+        /* Professional Theme Core Styling & Color Palette */
         :root {
-            --bg-lavender: #f4f0fa; /* Very light, soft pastel lavender background */
-            --title-amethyst: #5c3c85; /* Beautiful, clear amethyst purple for primary titles */
-            --accent-lavender: #8e70b8; /* Classic lavender tint for highlights and subheadings */
+            --bg-main: #e3ebf6;        /* Matching the soft blue lower background from the homepage */
+            --bg-hero: #ffffff;        /* Crisp white for the upper banner background */
+            --title-navy: #1a5286;     /* Deep navy blue from your main title */
+            --accent-green: #3b7a3e;   /* Polished forest green from your subtitle */
             --card-white: #ffffff;
-            --text-dark: #312a3a; /* Dark charcoal with a subtle lavender undertone */
-            --text-light: #6e647c;
-            --border-soft: #eadef7; /* Very delicate lavender border line */
+            --text-dark: #223345;      /* Dark charcoal with a subtle navy undertone */
+            --text-light: #5a6e85;
+            --border-soft: #cbd5e1;    /* Clean, soft gray-blue border line */
         }
 
         * {
@@ -24,7 +25,7 @@
         }
 
         body {
-            background-color: var(--bg-lavender);
+            background-color: var(--bg-main);
             color: var(--text-dark);
             line-height: 1.6;
             display: flex;
@@ -35,10 +36,11 @@
         /* Profile Header Banner */
         .intro-hero {
             width: 100%;
-            background: linear-gradient(rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.68)), 
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.75)), 
                         url('english-spark-banner.jpg');
             background-size: cover;
             background-position: center;
+            background-color: var(--bg-hero);
             text-align: center;
             padding: 70px 20px;
             border-bottom: 2px dashed var(--border-soft);
@@ -46,17 +48,17 @@
 
         .intro-hero h1 {
             font-size: 3.5rem;
-            font-weight: 900;
-            color: var(--title-amethyst);
+            font-weight: 800;
+            color: var(--title-navy);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             margin-bottom: 10px;
         }
 
         .intro-hero p {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--accent-lavender);
+            color: var(--accent-green);
         }
 
         /* Main Content Layout Container */
@@ -66,23 +68,31 @@
             padding: 40px 20px;
         }
 
-        /* Back to Home Link */
+        /* Back to Home Link (Styled like your professional buttons) */
         .back-home {
             display: inline-flex;
             align-items: center;
             text-decoration: none;
-            color: var(--title-amethyst);
+            background-color: var(--title-navy);
+            color: #ffffff;
             font-weight: 700;
             text-transform: uppercase;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            padding: 10px 20px;
+            border-radius: 6px;
             margin-bottom: 30px;
-            transition: color 0.2s ease;
+            box-shadow: 0 4px 6px rgba(26, 82, 134, 0.15);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
 
         .back-home:hover {
-            color: var(--accent-lavender);
-            text-decoration: underline;
+            background-color: #ffffff;
+            color: var(--title-navy);
+            border: 2px solid var(--title-navy);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(26, 82, 134, 0.2);
         }
 
         /* Content Blocks Shared Styling */
@@ -90,9 +100,9 @@
             background-color: var(--card-white);
             border-radius: 12px;
             padding: 40px;
-            box-shadow: 0 4px 15px rgba(142, 112, 184, 0.05);
+            box-shadow: 0 4px 15px rgba(26, 82, 134, 0.05);
             margin-bottom: 35px;
-            border: 1px solid rgba(234, 222, 247, 0.6);
+            border: 1px solid rgba(203, 213, 225, 0.6);
         }
 
         /* Profile Layout Box Specifics */
@@ -110,10 +120,9 @@
             border-radius: 50%;
             background-size: cover;
             background-position: center;
-            background-color: #f3effa;
+            background-color: #f4f7fc;
             border: 4px solid var(--border-soft);
-            box-shadow: 0 4px 10px rgba(142, 112, 184, 0.12);
-            /* Added smooth opacity transition for continuous fading loops */
+            box-shadow: 0 4px 10px rgba(26, 82, 134, 0.12);
             transition: opacity 0.4s ease-in-out;
             opacity: 1;
         }
@@ -125,7 +134,7 @@
 
         .profile-text h2 {
             font-size: 2rem;
-            color: var(--title-amethyst);
+            color: var(--title-navy);
             margin-bottom: 15px;
         }
 
@@ -137,16 +146,16 @@
 
         .content-block h3 {
             font-size: 1.7rem;
-            color: var(--title-amethyst);
+            color: var(--title-navy);
             margin-bottom: 20px;
-            border-bottom: 2px solid var(--bg-lavender);
+            border-bottom: 2px solid var(--bg-main);
             padding-bottom: 8px;
         }
 
         /* Sub-headings for Philosophy Sections */
         .content-block h4 {
             font-size: 1.25rem;
-            color: var(--accent-lavender);
+            color: var(--accent-green);
             margin-top: 20px;
             margin-bottom: 8px;
             display: flex;
@@ -161,7 +170,7 @@
             line-height: 1.8;
         }
 
-        /* Highlights & Classroom Core Core Lists */
+        /* Highlights & Classroom Core Lists */
         .fact-list {
             list-style: none;
             margin-top: 15px;
