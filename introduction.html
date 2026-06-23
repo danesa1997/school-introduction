@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About & Philosophy - English Spark</title>
+    <title>English Spark - About & Philosophy</title>
     <style>
         /* Professional Lavender Core Styling & Color Palette */
         :root {
@@ -43,24 +43,29 @@
             background-size: cover;
             background-position: center;
             text-align: center;
-            padding: 80px 20px;
+            padding: 90px 20px;
             border-bottom: 2px dashed var(--border-soft);
         }
 
         .intro-hero h1 {
-            font-size: 3.2rem; /* Adjusted from 3.5rem down slightly for better screen proportion */
-            font-weight: 800;
-            color: var(--title-amethyst);
-            text-transform: uppercase;
-            letter-spacing: 2px; /* Increased spacing slightly for a clean, editorial banner look */
-            margin-bottom: 12px;
+            font-size: 3.8rem; 
+            font-weight: 900; 
+            color: var(--title-amethyst); 
+            text-transform: uppercase; 
+            letter-spacing: 3px; 
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(92, 60, 133, 0.15);
         }
 
         .intro-hero p {
-            font-size: 1.4rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+            font-size: 1.5rem; 
+            font-weight: 700; 
+            letter-spacing: 0.5px; 
             color: var(--accent-lavender);
+            background: rgba(255, 255, 255, 0.4);
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 20px;
         }
 
         /* Main Content Layout Container */
@@ -212,21 +217,26 @@
 </head>
 <body>
 
+    <!-- HERO BANNER WITH BRANDING -->
     <header class="intro-hero">
-        <h1>About & Philosophy</h1>
-        <p>The Passion and Purpose Behind the Spark!</p>
+        <h1>English Spark</h1>
+        <p>Your Daily Dose of English Fun!</p>
     </header>
 
+    <!-- CONTENT CONTAINER -->
     <main class="container">
         
+        <!-- Navigation Back Home -->
         <a href="index.html" class="back-home">← Back to Main Hub</a>
 
+        <!-- Personal Self Introduction Panel -->
         <section class="content-block profile-section">
             <div id="rotatingProfilePic" class="profile-img-box"></div>
             <div class="profile-text">
                 <h2>Hi everyone!</h2>
                 <p>My name is <strong>Danesa Mae B. Latonio</strong>, but you can call me <strong>"Nesa"</strong> for short. I’m from the Philippines, and I’ve been teaching for 7 years now!</p>
                 
+                <!-- Turned your passion sentence into a striking visual pull-quote -->
                 <div class="passion-quote">
                     "Teaching is not just my profession—it’s my absolute passion. I truly love working with students and helping them learn and grow."
                 </div>
@@ -236,6 +246,7 @@
             </div>
         </section>
 
+        <!-- Structured Teaching Philosophy Section Panel -->
         <section class="content-block">
             <h3>My Teaching Philosophy</h3>
             <p class="philosophy-text">
@@ -261,6 +272,7 @@
             </p>
         </section>
 
+        <!-- Commitment to Teaching Panel -->
         <section class="content-block">
             <h3>Commitment to Teaching</h3>
             <p class="philosophy-text">
@@ -271,6 +283,7 @@
             </p>
         </section>
 
+        <!-- Practical Methodology Quick Highlights Panel -->
         <section class="content-block">
             <h3>How We Learn</h3>
             <p class="philosophy-text">
@@ -285,6 +298,7 @@
 
     </main>
 
+    <!-- AUTOMATIC PICTURE ROTATION SCRIPT -->
     <script>
         window.addEventListener('DOMContentLoaded', () => {
             const profilePictures = [
