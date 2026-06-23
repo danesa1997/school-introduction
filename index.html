@@ -51,29 +51,92 @@
             margin: 0 auto;
         }
 
-        /* Navigation Menu Box */
-        .nav-container {
-            max-width: 900px;
+        /* Main Content Container */
+        .main-content {
+            max-width: 1000px;
             width: 100%;
-            padding: 60px 20px;
-            display: flex;
-            justify-content: center;
+            padding: 40px 20px;
         }
 
-        /* Simple Row setup for side-by-side items */
+        /* Core Features Grid Section (Makes the page less plain!) */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .feature-card {
+            background-color: #ffffff;
+            padding: 30px 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(15, 76, 129, 0.05);
+            border: 1px solid rgba(176, 196, 222, 0.4);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            color: #0f4c81;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: #4a5568;
+            font-size: 1rem;
+        }
+
+        /* Section Dividers / Headers */
+        .hub-title {
+            color: #0f4c81;
+            font-size: 2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .hub-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #2e5a1c;
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Navigation Menu Boxes */
         .nav-row {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 25px;
             width: 100%;
             flex-wrap: wrap;
+            margin-bottom: 50px;
         }
 
-        /* Professional Buttons Linked with Theme Palette */
+        /* Resource Hub Specific Styling */
+        .resource-hub-box {
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 16px;
+            padding: 40px 20px 20px 20px;
+            border: 2px dashed #b0c4de;
+        }
+
+        /* Primary Large Buttons (Self Intro & My School) */
         .spark-btn {
             display: inline-block;
             text-decoration: none;
-            background-color: #0f4c81; /* Replaced black with the deep rich title blue */
+            background-color: #0f4c81;
             color: #f7fafc;
             text-align: center;
             padding: 18px 40px;
@@ -81,27 +144,53 @@
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
-            border-radius: 6px;
-            box-shadow: 0 4px 10px rgba(15, 76, 129, 0.2);
-            min-width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(15, 76, 129, 0.15);
+            min-width: 280px;
             border: 2px solid transparent;
             transition: all 0.3s ease-in-out;
         }
 
-        /* Interactive and Clean Hover Inversion */
         .spark-btn:hover {
             background-color: #ffffff;
             color: #0f4c81;
             border: 2px solid #0f4c81;
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(15, 76, 129, 0.3);
+            box-shadow: 0 6px 20px rgba(15, 76, 129, 0.25);
+        }
+
+        /* Secondary Resource Buttons (Slightly smaller, fun accent colors) */
+        .resource-btn {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #2e5a1c; /* Elegant green accent to match the tagline */
+            color: #f7fafc;
+            text-align: center;
+            padding: 15px 30px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(46, 90, 28, 0.15);
+            min-width: 260px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .resource-btn:hover {
+            background-color: #ffffff;
+            color: #2e5a1c;
+            border: 2px solid #2e5a1c;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(46, 90, 28, 0.25);
         }
 
         @media (max-width: 768px) {
             .spark-hero h1 { font-size: 2.8rem; }
             .spark-hero p { font-size: 1.5rem; }
-            .spark-btn { width: 100%; min-width: 100%; }
-            .nav-container { padding: 40px 20px; }
+            .spark-btn, .resource-btn { width: 100%; min-width: 100%; }
+            .main-content { padding: 20px 15px; }
         }
     </style>
 </head>
@@ -110,19 +199,47 @@
     <!-- HERO BANNER -->
     <header class="spark-hero">
         <h1>English Spark</h1>
-        <!-- Correctly Capitalized Subtitle -->
         <p>Your Daily Dose of English Fun!</p>
     </header>
 
-    <!-- NAVIGATION MENU LINKS -->
-    <main class="nav-container">
-        
-        <!-- Two Side-by-Side Main Buttons -->
+    <!-- MAIN CONTENT LAYOUT -->
+    <main class="main-content">
+
+        <!-- VISUAL CORE PILLARS SECTION -->
+        <section class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">👩‍🏫</span>
+                <h3>7+ Years Experience</h3>
+                <p>Bringing dedicated professional expertise and a deep love for structural language acquisition straight to the classroom.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🎮</span>
+                <h3>Interactive ESL Media</h3>
+                <p>Engaging digital learning templates, structural language games, and custom elementary worksheets designed for joyful participation.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">✨</span>
+                <h3>Active Learning</h3>
+                <p>Creating a kind, supportive, and welcoming space where creative risks are encouraged and mistakes are celebrated.</p>
+            </div>
+        </section>
+
+        <!-- TOP LEVEL NAVIGATION BUTTONS -->
         <div class="nav-row">
-            <!-- Text updated to cleanly direct to your intro page -->
             <a href="introduction.html" class="spark-btn">Self Introduction</a>
             <a href="school.html" class="spark-btn">My School</a>
         </div>
+
+        <!-- TEACHING RESOURCES HUB BOX -->
+        <section class="resource-hub-box">
+            <h2 class="hub-title">Teaching Resources</h2>
+            
+            <div class="nav-row" style="margin-bottom: 20px;">
+                <a href="media.html" class="resource-btn">Videos & Photos</a>
+                <a href="activities.html" class="resource-btn">Interactive Activities</a>
+                <a href="others.html" class="resource-btn">Others</a>
+            </div>
+        </section>
 
     </main>
 
