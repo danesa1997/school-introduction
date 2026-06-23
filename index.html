@@ -58,7 +58,7 @@
             padding: 40px 20px;
         }
 
-        /* Core Features Grid Section (Makes the page less plain!) */
+        /* Core Features Grid Section */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -114,22 +114,39 @@
             border-radius: 2px;
         }
 
+        /* Secondary Hub Title Color for Contrast */
+        .bilingual-box .hub-title {
+            color: #5c3c85; /* Amethyst Purple accent to match your favorite lavender tones */
+        }
+        .bilingual-box .hub-title::after {
+            background-color: #8e70b8;
+        }
+
         /* Navigation Menu Boxes */
         .nav-row {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 20px;
             width: 100%;
             flex-wrap: wrap;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
-        /* Resource Hub Specific Styling */
-        .resource-hub-box {
-            background-color: rgba(255, 255, 255, 0.5);
+        /* Dashboard Container Boxes */
+        .dashboard-box {
+            background-color: rgba(255, 255, 255, 0.6);
             border-radius: 16px;
             padding: 40px 20px 20px 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .resources-box {
             border: 2px dashed #b0c4de;
+        }
+
+        .bilingual-box {
+            border: 2px dashed #cbd5e1;
         }
 
         /* Primary Large Buttons (Self Intro & My School) */
@@ -159,21 +176,21 @@
             box-shadow: 0 6px 20px rgba(15, 76, 129, 0.25);
         }
 
-        /* Secondary Resource Buttons (Slightly smaller, fun accent colors) */
+        /* Green Resource Buttons */
         .resource-btn {
             display: inline-block;
             text-decoration: none;
-            background-color: #2e5a1c; /* Elegant green accent to match the tagline */
+            background-color: #2e5a1c;
             color: #f7fafc;
             text-align: center;
-            padding: 15px 30px;
+            padding: 15px 25px;
             font-size: 1.05rem;
             font-weight: 700;
             letter-spacing: 0.5px;
             text-transform: uppercase;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(46, 90, 28, 0.15);
-            min-width: 260px;
+            min-width: 250px;
             border: 2px solid transparent;
             transition: all 0.3s ease-in-out;
         }
@@ -186,10 +203,37 @@
             box-shadow: 0 6px 20px rgba(46, 90, 28, 0.25);
         }
 
+        /* Purple Bilingual Buttons */
+        .bilingual-btn {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #5c3c85; /* Elegant Amethyst Purple */
+            color: #f7fafc;
+            text-align: center;
+            padding: 15px 25px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(92, 60, 133, 0.15);
+            min-width: 230px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .bilingual-btn:hover {
+            background-color: #ffffff;
+            color: #5c3c85;
+            border: 2px solid #5c3c85;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(92, 60, 133, 0.25);
+        }
+
         @media (max-width: 768px) {
             .spark-hero h1 { font-size: 2.8rem; }
             .spark-hero p { font-size: 1.5rem; }
-            .spark-btn, .resource-btn { width: 100%; min-width: 100%; }
+            .spark-btn, .resource-btn, .bilingual-btn { width: 100%; min-width: 100%; }
             .main-content { padding: 20px 15px; }
         }
     </style>
@@ -231,13 +275,23 @@
         </div>
 
         <!-- TEACHING RESOURCES HUB BOX -->
-        <section class="resource-hub-box">
+        <section class="dashboard-box resources-box">
             <h2 class="hub-title">Teaching Resources</h2>
-            
-            <div class="nav-row" style="margin-bottom: 20px;">
+            <div class="nav-row" style="margin-bottom: 10px;">
                 <a href="media.html" class="resource-btn">Videos & Photos</a>
                 <a href="activities.html" class="resource-btn">Interactive Activities</a>
                 <a href="others.html" class="resource-btn">Others</a>
+            </div>
+        </section>
+
+        <!-- BILINGUAL INITIATIVES HUB BOX -->
+        <section class="dashboard-box bilingual-box">
+            <h2 class="hub-title">Bilingual Initiatives</h2>
+            <div class="nav-row" style="margin-bottom: 10px;">
+                <a href="weekly-sentence.html" class="bilingual-btn">Weekly English Sentence</a>
+                <a href="classroom-english.html" class="bilingual-btn">Classroom English</a>
+                <a href="sister-school.html" class="bilingual-btn">Sister School Program</a>
+                <a href="school-tour.html" class="bilingual-btn">School Tour</a>
             </div>
         </section>
 
