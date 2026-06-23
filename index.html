@@ -69,34 +69,38 @@
             flex-wrap: wrap;
         }
 
-        /* Elegant Dark Buttons */
+        /* Professional Buttons Linked with Theme Palette */
         .spark-btn {
             display: inline-block;
             text-decoration: none;
-            background-color: #1a1a1a; /* Sleek dark charcoal button background */
+            background-color: #0f4c81; /* Uses the deep rich title blue instead of black */
             color: #f7fafc;
             text-align: center;
             padding: 18px 40px;
             font-size: 1.15rem;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
-            border-radius: 4px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(15, 76, 129, 0.2);
             min-width: 300px;
-            transition: all 0.2s ease-in-out;
+            border: 2px solid transparent;
+            transition: all 0.3s ease-in-out;
         }
 
+        /* Interactive and Clean Hover Inversion */
         .spark-btn:hover {
-            background-color: #333333;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+            background-color: #ffffff;
+            color: #0f4c81;
+            border: 2px solid #0f4c81;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(15, 76, 129, 0.3);
         }
 
         @media (max-width: 768px) {
             .spark-hero h1 { font-size: 2.8rem; }
             .spark-hero p { font-size: 1.5rem; }
-            .spark-btn { width: 100%; }
+            .spark-btn { width: 100%; min-width: 100%; }
             .nav-container { padding: 40px 20px; }
         }
     </style>
@@ -106,7 +110,8 @@
     <!-- HERO BANNER -->
     <header class="spark-hero">
         <h1>English Spark</h1>
-        <p>Your daily dose of English Fun!</p>
+        <!-- Updated Title-Case Capitalization -->
+        <p>Your Daily Dose of English Fun!</p>
     </header>
 
     <!-- NAVIGATION MENU LINKS -->
