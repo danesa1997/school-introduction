@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Self Introduction - English Spark</title>
+    <title>About & Philosophy - English Spark</title>
     <style>
         /* Core Styling & Color Palette (Matches English Spark Home) */
         :root {
@@ -13,7 +13,6 @@
             --card-white: #ffffff;
             --text-dark: #2d3748;
             --text-light: #5a6a85;
-            --btn-dark: #1a1a1a;
         }
 
         * {
@@ -36,7 +35,7 @@
         .intro-hero {
             width: 100%;
             background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.6)), 
-                        url('english-spark-banner.jpg'); /* Reuses your main banner background */
+                        url('english-spark-banner.jpg');
             background-size: cover;
             background-position: center;
             text-align: center;
@@ -85,13 +84,17 @@
             text-decoration: underline;
         }
 
-        /* Intro Profile Layout Box */
-        .profile-section {
+        /* Content Blocks Shared Styling */
+        .content-block {
             background-color: var(--card-white);
             border-radius: 12px;
             padding: 40px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             margin-bottom: 35px;
+        }
+
+        /* Profile Layout Box Specifics */
+        .profile-section {
             display: flex;
             gap: 35px;
             align-items: center;
@@ -103,7 +106,7 @@
             flex: 0 0 220px;
             height: 220px;
             border-radius: 50%;
-            background-image: url('profile.jpg'); /* Name your personal photo profile.jpg */
+            background-image: url('profile.jpg');
             background-size: cover;
             background-position: center;
             background-color: #e2e8f0;
@@ -128,15 +131,7 @@
             margin-bottom: 15px;
         }
 
-        /* Interactive Highlights Block */
-        .highlights-block {
-            background-color: var(--card-white);
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .highlights-block h3 {
+        .content-block h3 {
             font-size: 1.6rem;
             color: var(--title-blue);
             margin-bottom: 20px;
@@ -144,7 +139,7 @@
             padding-bottom: 8px;
         }
 
-        /* Fact List */
+        /* Fact & Philosophy Lists */
         .fact-list {
             list-style: none;
         }
@@ -163,11 +158,18 @@
             top: 2px;
         }
 
+        .philosophy-text {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
         @media (max-width: 600px) {
             .intro-hero h1 { font-size: 2.3rem; }
-            .profile-section { padding: 25px; text-align: center; justify-content: center; }
+            .content-block { padding: 25px; }
+            .profile-section { text-align: center; justify-content: center; }
             .profile-img-box { flex: 0 0 180px; height: 180px; }
-            .highlights-block { padding: 25px; }
         }
     </style>
 </head>
@@ -175,8 +177,8 @@
 
     <!-- HERO BANNER -->
     <header class="intro-hero">
-        <h1>About Me</h1>
-        <p>Meet the Teacher Behind the Spark!</p>
+        <h1>About & Philosophy</h1>
+        <p>The Passion and Purpose Behind the Spark!</p>
     </header>
 
     <!-- CONTENT CONTAINER -->
@@ -186,7 +188,7 @@
         <a href="index.html" class="back-home">← Back to Main Hub</a>
 
         <!-- Profile Section Panel -->
-        <section class="profile-section">
+        <section class="content-block profile-section">
             <div class="profile-img-box"></div>
             <div class="profile-text">
                 <h2>Hello! Hola! 你好!</h2>
@@ -195,8 +197,19 @@
             </div>
         </section>
 
-        <!-- Highlights & Quick Background Panel -->
-        <section class="highlights-block">
+        <!-- Teaching Philosophy Section Panel -->
+        <section class="content-block">
+            <h3>My Teaching Philosophy</h3>
+            <p class="philosophy-text">
+                I believe that a language shouldn't just be memorized from a textbook—it should be experienced. True language acquisition happens when children feel safe to make mistakes, play, and engage with the world around them. 
+            </p>
+            <p class="philosophy-text">
+                By bringing meaningful context into the classroom, I design interactive lessons where English becomes a tool for genuine creativity, collaboration, and exploration. Every child has a unique spark, and my goal is to guide them toward confident global communication.
+            </p>
+        </section>
+
+        <!-- Highlights Panel -->
+        <section class="content-block">
             <h3>Quick Highlights</h3>
             <ul class="fact-list">
                 <li><strong>Interactive ESL Materials:</strong> Specialized in designing digital learning templates, structural language games, and tailored elementary worksheets.</li>
