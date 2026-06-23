@@ -28,36 +28,41 @@
             line-height: 1.6;
         }
 
-        /* Hero Header Banner with School Picture Background */
+        /* Hero Header Banner with MUCH Lighter Overlay & Bigger Text */
         .hero {
-            background: linear-gradient(rgba(27, 77, 62, 0.85), rgba(27, 77, 62, 0.90)), 
-                        url('school-banner.jpg');
+            background: linear-gradient(rgba(46, 125, 50, 0.40), rgba(27, 77, 62, 0.55)), 
+                        url('school-banner.jpg'); /* Make sure your photo is named school-banner.jpg */
             background-size: cover;
             background-position: center;
             color: white;
             text-align: center;
-            padding: 100px 20px;
+            padding: 120px 20px; /* Increased padding for a grander look */
         }
 
         .hero h1 {
-            font-size: 2.6rem;
-            margin-bottom: 10px;
+            font-size: 3.8rem; /* Made significantly bigger and bolder */
+            font-weight: 800;
+            margin-bottom: 15px;
             letter-spacing: 0.5px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Stronger shadow to pop against lighter picture */
         }
 
         .hero h2 {
-            font-size: 1.3rem;
-            font-weight: 400;
-            color: #ccebe0;
-            margin-bottom: 25px;
+            font-size: 1.6rem; /* Bigger subtitle font */
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
         }
 
         .hero p {
-            max-width: 800px;
-            margin: 0 auto 35px auto;
-            font-size: 1.1rem;
-            opacity: 0.95;
+            max-width: 850px;
+            margin: 0 auto 40px auto;
+            font-size: 1.25rem; /* Bigger paragraph font */
+            font-weight: 500;
+            line-height: 1.8;
+            opacity: 1;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
         }
 
         /* Button Container */
@@ -74,17 +79,17 @@
             align-items: center;
             gap: 8px;
             text-decoration: none;
-            padding: 12px 28px;
-            font-size: 15px;
-            font-weight: 600;
+            padding: 14px 32px;
+            font-size: 16px;
+            font-weight: 700;
             border-radius: 25px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             transition: all 0.2s ease-in-out;
         }
 
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
 
         /* Facebook Button */
@@ -249,14 +254,16 @@
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero h2 { font-size: 1.2rem; }
+            .hero p { font-size: 1.1rem; }
             .mv-section { padding: 30px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HERO HEADER BANNER WITH BACKGROUND PHOTO -->
+    <!-- HERO HEADER BANNER WITH LIGHT OVERLAY AND LARGE FONT -->
     <header class="hero">
         <h1>Welcome to Siang Tian Elementary School</h1>
         <h2>Erlin Township, Changhua County, Taiwan</h2>
@@ -264,12 +271,10 @@
         
         <!-- Button Action Group -->
         <div class="button-group">
-            <!-- School Facebook Page Link Button -->
             <a href="https://www.facebook.com/SiangTain" target="_blank" rel="noopener noreferrer" class="btn fb-button">
                 📱 Visit Our Facebook Page
             </a>
 
-            <!-- Google Maps Link Button -->
             <a href="https://www.google.com/maps/place/No.+10-1,+Rulin+Rd,+Xiangtian+Village,+Erlin+Township,+Changhua+County,+526/@23.8741882,120.3736913,17z/data=!3m1!4b1!4m6!3m5!1s0x346eb2c51c49122f:0xe99804368acb2864!8m2!3d23.8741882!4d120.3762662!16s%2Fg%2F11c1zfrcrp" target="_blank" rel="noopener noreferrer" class="btn maps-button">
                 📍 View School Map Location
             </a>
