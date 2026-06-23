@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music & Arts Programs - Siang Tian Elementary School</title>
+    <style>
+        /* Core Styling & Color Palette (Matches Homepage) */
+        :root {
+            --primary-green: #1b4d3e; /* Deep Forest Green */
+            --accent-green: #2e7d32; /* Leaf Green */
+            --super-light-green: #f0f9f4; /* Super Duper Light Mint Background */
+            --card-white: #ffffff;
+            --text-dark: #2d3748;
+            --text-light: #5a6a85;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--super-light-green);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Sub-page Header Banner */
+        .sub-hero {
+            background: linear-gradient(rgba(46, 125, 50, 0.5), rgba(27, 77, 62, 0.7)), 
+                        url('music-banner.jpg'); /* Optional banner background photo */
+            background-size: cover;
+            background-position: center;
+            background-color: var(--primary-green);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .sub-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .sub-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            opacity: 0.95;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        /* Back to Home Button Link */
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            color: var(--accent-green);
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: color 0.2s ease;
+        }
+
+        .back-home:hover {
+            color: var(--primary-green);
+            text-decoration: underline;
+        }
+
+        /* Music Hub Grid (2 Columns Side-by-Side) */
+        .music-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        /* Instrument Cards Setup */
+        .instrument-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            border-radius: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .instrument-card {
+            background-color: var(--card-white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .instrument-link:hover {
+            transform: translateY(-8px);
+        }
+
+        .instrument-link:hover .instrument-card {
+            box-shadow: 0 15px 30px rgba(27, 77, 62, 0.15);
+            border-color: var(--accent-green);
+        }
+
+        .img-box {
+            width: 100%;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            background-color: #e2e8f0;
+        }
+
+        .card-body {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-body h2 {
+            font-size: 1.6rem;
+            color: var(--primary-green);
+            margin-bottom: 12px;
+        }
+
+        .card-body p {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .action-button {
+            background-color: var(--primary-green);
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background-color 0.2s ease;
+            box-shadow: 0 4px 10px rgba(27, 77, 62, 0.2);
+        }
+
+        .instrument-link:hover .action-button {
+            background-color: var(--accent-green);
+        }
+
+        /* Responsive Tweaks */
+        @media (max-width: 600px) {
+            .sub-hero h1 { font-size: 2.2rem; }
+            .container { padding: 30px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SUB-PAGE HEADER BANNER -->
+    <header class="sub-hero">
+        <h1>Music & Arts Department</h1>
+        <p>Cultivating musical harmony, dedication, and creative self-expression in every student at Siang Tian.</p>
+    </header>
+
+    <!-- MAIN INTERACTIVE HUB CONTENT -->
+    <main class="container">
+        
+        <!-- Navigation Link to Go Back Home -->
+        <a href="index.html" class="back-home">← Back to Main Campus Website</a>
+
+        <!-- Side-by-Side Choices -->
+        <div class="music-grid">
+
+            <!-- Harmonica Program Pathway -->
+            <a href="harmonica.html" class="instrument-link" aria-label="Explore the Harmonica Program">
+                <div class="instrument-card">
+                    <!-- Put your harmonica photo filename here -->
+                    <div class="img-box" style="background-image: url('harmonica.jpg');"></div>
+                    <div class="card-body">
+                        <h2>🎵 Harmonica Program</h2>
+                        <p>Our long-standing traditional harmonica program fosters rhythm, deep breathing control, and wonderful ensemble teamwork through regular local performances.</p>
+                        <div class="action-button">Explore Harmonica →</div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Violin Program Pathway (Leads to a dedicated violin sub-page) -->
+            <a href="violin.html" class="instrument-link" aria-label="Explore the Violin Program">
+                <div class="instrument-card">
+                    <!-- Put your violin photo filename here -->
+                    <div class="img-box" style="background-image: url('violin.jpg');"></div>
+                    <div class="card-body">
+                        <h2>🎻 Violin Program</h2>
+                        <p>Our dedicated strings curriculum teaches posture, focus, and intricate classical techniques, giving students an exquisite foundation in global musical arts.</p>
+                        <div class="action-button">Explore Violin Dedicated Page →</div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
