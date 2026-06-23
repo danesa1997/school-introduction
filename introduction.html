@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About & Philosophy - English Spark</title>
+    <title>English Spark - Home</title>
     <style>
         /* Professional Lavender Core Styling & Color Palette */
         :root {
@@ -11,8 +11,7 @@
             --title-amethyst: #5c3c85; /* Beautiful, clear amethyst purple for primary titles */
             --accent-lavender: #8e70b8; /* Classic lavender tint for highlights and subheadings */
             --card-white: #ffffff;
-            --text-dark: #2d2736; /* Slightly deeper charcoal for crisper reading contrast */
-            --text-light: #6e647c;
+            --text-dark: #2d2736;
             --border-soft: #eadef7; /* Very delicate lavender border line */
         }
 
@@ -20,284 +19,122 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            /* Using a clean, highly legible system font stack prioritized for modern web readability */
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
             background-color: var(--bg-lavender);
             color: var(--text-dark);
-            /* Increased line-height slightly to 1.75 for a more relaxed, premium reading experience */
-            line-height: 1.75;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            -webkit-font-smoothing: antialiased; /* Makes fonts look sharper on Mac/iOS devices */
+            justify-content: center;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Profile Header Banner */
-        .intro-hero {
+        /* Main Hero Presentation Container */
+        .hero-container {
             width: 100%;
-            background: linear-gradient(rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.68)), 
-                        url('english-spark-banner.jpg');
-            background-size: cover;
-            background-position: center;
+            max-width: 800px;
             text-align: center;
-            padding: 80px 20px;
-            border-bottom: 2px dashed var(--border-soft);
+            padding: 60px 20px;
         }
 
-        .intro-hero h1 {
-            font-size: 3.2rem; /* Adjusted from 3.5rem down slightly for better screen proportion */
-            font-weight: 800;
-            color: var(--title-amethyst);
-            text-transform: uppercase;
-            letter-spacing: 2px; /* Increased spacing slightly for a clean, editorial banner look */
-            margin-bottom: 12px;
+        /* Refined Header Typography */
+        .hero-container h1 {
+            font-size: 4rem; 
+            font-weight: 900; 
+            color: var(--title-amethyst); 
+            text-transform: uppercase; 
+            letter-spacing: 4px; 
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(92, 60, 133, 0.12);
         }
 
-        .intro-hero p {
-            font-size: 1.4rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+        /* Catchy Subtitle Design with White Pill Bubble Background */
+        .hero-container p {
+            font-size: 1.4rem; 
+            font-weight: 700; 
+            letter-spacing: 0.5px; 
             color: var(--accent-lavender);
+            background: rgba(255, 255, 255, 0.6);
+            display: inline-block;
+            padding: 6px 20px;
+            border-radius: 25px;
+            box-shadow: 0 4px 10px rgba(142, 112, 184, 0.04);
+            margin-bottom: 50px;
         }
 
-        /* Main Content Layout Container */
-        .container {
-            max-width: 900px;
+        /* Divider Decoration */
+        .divider {
             width: 100%;
-            padding: 50px 20px;
+            border-bottom: 2px dashed var(--border-soft);
+            margin-bottom: 50px;
         }
 
-        /* Back to Home Link */
-        .back-home {
-            display: inline-flex;
-            align-items: center;
+        /* Dynamic Grid Layout for Navigation Links */
+        .button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        /* Reimagined Premium Button Design */
+        .nav-btn {
+            display: inline-block;
             text-decoration: none;
-            color: var(--title-amethyst);
+            padding: 16px 35px;
+            font-size: 1rem;
             font-weight: 700;
             text-transform: uppercase;
-            font-size: 0.9rem;
             letter-spacing: 1px;
-            margin-bottom: 35px;
-            transition: color 0.2s ease;
-        }
-
-        .back-home:hover {
-            color: var(--accent-lavender);
-            text-decoration: underline;
-        }
-
-        /* Content Blocks Shared Styling */
-        .content-block {
+            color: var(--title-amethyst);
             background-color: var(--card-white);
-            border-radius: 16px; /* Slightly rounder corners for a softer feel */
-            padding: 45px;
-            box-shadow: 0 10px 30px rgba(142, 112, 184, 0.04); /* Softer, broader shadow style */
-            margin-bottom: 35px;
-            border: 1px solid rgba(234, 222, 247, 0.5);
+            border: 2px solid var(--border-soft);
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(142, 112, 184, 0.06);
+            transition: all 0.25s ease;
+            min-width: 240px;
+            cursor: pointer;
         }
 
-        /* Profile Layout Box Specifics */
-        .profile-section {
-            display: flex;
-            gap: 40px;
-            align-items: center;
-            flex-wrap: wrap;
+        /* Smooth Interactive Hover Effects */
+        .nav-btn:hover {
+            color: var(--card-white);
+            background-color: var(--title-amethyst);
+            border-color: var(--title-amethyst);
+            transform: translateY(-3px); /* Subtle elevate animation */
+            box-shadow: 0 8px 20px rgba(92, 60, 133, 0.18);
         }
 
-        /* Oval Profile Picture Setup */
-        .profile-img-box {
-            flex: 0 0 220px;
-            height: 220px;
-            border-radius: 50%;
-            background-image: url('profile.jpg'); 
-            background-size: cover;
-            background-position: center;
-            background-color: #f3effa;
-            border: 4px solid var(--border-soft);
-            box-shadow: 0 8px 20px rgba(142, 112, 184, 0.1);
-        }
-
-        .profile-text {
-            flex: 1;
-            min-width: 280px;
-        }
-
-        /* Warm Welcoming Header Style */
-        .profile-text h2 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--title-amethyst);
-            margin-bottom: 18px;
-            letter-spacing: -0.5px; /* Tighter letter spacing on big headlines looks premium */
-        }
-
-        /* Body paragraphs styling for highly accessible reading */
-        .profile-text p, .philosophy-text {
-            font-size: 1.1rem; /* Kept at 1.1rem which is the golden standard for readable text */
-            font-weight: 400;
-            color: var(--text-dark);
-            margin-bottom: 18px;
-        }
-
-        /* Emphasized Passion Quote */
-        .passion-quote {
-            font-size: 1.2rem; /* Stands out slightly larger from normal prose */
-            font-style: italic;
-            color: var(--title-amethyst);
-            border-left: 3px solid var(--accent-lavender);
-            padding-left: 15px;
-            margin: 20px 0;
-            font-weight: 500;
-        }
-
-        /* Main Component Block Section Titles */
-        .content-block h3 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--title-amethyst);
-            margin-bottom: 24px;
-            border-bottom: 2px solid var(--bg-lavender);
-            padding-bottom: 10px;
-            letter-spacing: -0.3px;
-        }
-
-        /* Sub-headings for Philosophy Sections (The 3 Pillars) */
-        .content-block h4 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--title-amethyst); /* Changed to primary color for higher professional contrast */
-            margin-top: 25px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            letter-spacing: -0.2px;
-        }
-
-        /* Highlights & Classroom Core Lists */
-        .fact-list {
-            list-style: none;
-            margin-top: 15px;
-        }
-
-        .fact-list li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 16px;
-            font-size: 1.05rem;
-            color: var(--text-dark);
-        }
-
-        .fact-list li::before {
-            content: "✨";
-            position: absolute;
-            left: 0;
-            top: 2px;
-        }
-
-        /* Responsive scaling adjustments for smaller screens */
+        /* Responsive Layout fixes for mobile displays */
         @media (max-width: 600px) {
-            .intro-hero h1 { font-size: 2.2rem; }
-            .intro-hero p { font-size: 1.1rem; }
-            .content-block { padding: 30px 20px; }
-            .profile-text h2 { font-size: 1.8rem; }
-            .profile-section { text-align: center; justify-content: center; }
-            .profile-img-box { flex: 0 0 180px; height: 180px; }
-            .passion-quote { text-align: left; }
+            .hero-container h1 { font-size: 2.8rem; letter-spacing: 2px; }
+            .hero-container p { font-size: 1.1rem; padding: 4px 16px; margin-bottom: 40px; }
+            .divider { margin-bottom: 40px; }
+            .nav-btn { width: 100%; max-width: 280px; }
         }
     </style>
 </head>
 <body>
 
-    <header class="intro-hero">
-        <h1>About & Philosophy</h1>
-        <p>The Passion and Purpose Behind the Spark!</p>
-    </header>
+    <main class="hero-container">
+        <!-- Title Branding Headers -->
+        <h1>English Spark</h1>
+        <p>Your Daily Dose of English Fun!</p>
 
-    <main class="container">
-        
-        <a href="index.html" class="back-home">← Back to Main Hub</a>
+        <!-- Centered Aesthetic Separator -->
+        <div class="divider"></div>
 
-        <section class="content-block profile-section">
-            <div id="rotatingProfilePic" class="profile-img-box"></div>
-            <div class="profile-text">
-                <h2>Hi everyone!</h2>
-                <p>My name is <strong>Danesa Mae B. Latonio</strong>, but you can call me <strong>"Nesa"</strong> for short. I’m from the Philippines, and I’ve been teaching for 7 years now!</p>
-                
-                <div class="passion-quote">
-                    "Teaching is not just my profession—it’s my absolute passion. I truly love working with students and helping them learn and grow."
-                </div>
-
-                <p>There is something incredibly special about seeing a student smile when they finally understand something new. That breakthrough moment always reminds me exactly why I chose this path.</p>
-                <p>Aside from teaching, I love learning about different cultures and meeting new people. I am thrilled to get to know all of you and to share many fun, educational experiences together. Let’s have a great time learning together!</p>
-            </div>
-        </section>
-
-        <section class="content-block">
-            <h3>My Teaching Philosophy</h3>
-            <p class="philosophy-text">
-                I firmly believe that all students can learn and grow with the right guidance and support. Every child brings unique strengths, experiences, and potential to the classroom, and it’s my mission to help each one thrive. Learning is not a one-size-fits-all process—it’s an individual journey that flourishes inside a supportive, respectful, and engaging environment.
-            </p>
-            <p class="philosophy-text" style="color: var(--text-light); font-weight: 500;">
-                To build a classroom where learning is joyful, respectful, and meaningful, I structure our everyday environment around three key principles:
-            </p>
-
-            <h4>✨ Try Our Best & Learn from Mistakes</h4>
-            <p class="philosophy-text">
-                We embrace a growth mindset by recognizing that mistakes are an important milestone in the learning journey. I actively encourage students to take creative risks, ask questions, and view challenges as opportunities. By putting forth their best effort and reflecting on their progress, students cultivate long-term resilience and deep self-confidence.
-            </p>
-
-            <h4>✨ Work Together & Help Each Other</h4>
-            <p class="philosophy-text">
-                Collaboration is the foundational key to a successful learning community. We learn best when we support one another, listen actively, and celebrate each other’s successes. Through group work, peer feedback, and cooperative projects, students develop crucial social and communication skills that extend far beyond the classroom.
-            </p>
-
-            <h4>✨ Create a Kind & Welcoming Space for Everyone</h4>
-            <p class="philosophy-text">
-                A safe, inclusive, and respectful environment is essential for meaningful language acquisition. In our classroom, every voice matters and everyone belongs. We honor individual differences, practice active empathy, and uphold kindness in all interactions, ensuring that each student feels valued and completely comfortable expressing themselves.
-            </p>
-        </section>
-
-        <section class="content-block">
-            <h3>Commitment to Teaching</h3>
-            <p class="philosophy-text">
-                I know that teaching can be both challenging and exhausting, but I am deeply committed to this profession because I believe in the transformative power of education. I am always willing to go above and beyond to create a classroom that is fun, inclusive, and academically enriching. 
-            </p>
-            <p class="philosophy-text">
-                I choose to stay reflective and open to continuous growth, constantly discovering new ways to inspire, motivate, and support my students as they gain confidence, curiosity, and excitement learning English every single day.
-            </p>
-        </section>
-
-        <section class="content-block">
-            <h3>How We Learn</h3>
-            <p class="philosophy-text">
-                I believe that language learning should be fun, meaningful, and deeply engaging. To keep our lessons interesting and enjoyable, I love incorporating these dynamic strategies into our classroom routine:
-            </p>
-            <ul class="fact-list">
-                <li><strong>Interactive ESL Media:</strong> Utilizing creative digital learning templates, structural language games, and custom elementary worksheets.</li>
-                <li><strong>Creative Arts & Play:</strong> Singing memorable songs, storytelling, and designing hands-on activities to keep energy high and retention strong.</li>
-                <li><strong>Holistic Activities:</strong> Linking real-world communication with physical teamwork, rhythm, and outdoor exploration.</li>
-            </ul>
-        </section>
-
+        <!-- Links Core Navigation Layout -->
+        <div class="button-group">
+            <a href="introduction.html" class="nav-btn">About & Philosophy</a>
+            <a href="#" class="nav-btn">My School</a>
+        </div>
     </main>
-
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const profilePictures = [
-                'profile.jpg',
-                'profile2.jpg',
-                'profile3.jpg',
-                'profile4.jpg',
-                'profile5.jpg'
-            ];
-            const randomImage = profilePictures[Math.floor(Math.random() * profilePictures.length)];
-            document.getElementById('rotatingProfilePic').style.backgroundImage = `url('${randomImage}')`;
-        });
-    </script>
 
 </body>
 </html>
