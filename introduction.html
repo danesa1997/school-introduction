@@ -128,4 +128,174 @@
 
         .profile-text h2 {
             font-size: 2rem;
-            color: var(--title
+            color: var(--title-amethyst);
+            margin-bottom: 15px;
+        }
+
+        .profile-text p {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .content-block h3 {
+            font-size: 1.7rem;
+            color: var(--title-amethyst);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--bg-lavender);
+            padding-bottom: 8px;
+        }
+
+        /* Sub-headings for Philosophy Sections */
+        .content-block h4 {
+            font-size: 1.25rem;
+            color: var(--accent-lavender);
+            margin-top: 20px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .philosophy-text {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        /* Highlights & Classroom Core Core Lists */
+        .fact-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .fact-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .fact-list li::before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        @media (max-width: 600px) {
+            .intro-hero h1 { font-size: 2.8rem; letter-spacing: 2px; }
+            .intro-hero p { font-size: 1.1rem; }
+            .content-block { padding: 25px; }
+            .profile-section { text-align: center; justify-content: center; }
+            .profile-img-box { flex: 0 0 180px; height: 180px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="intro-hero">
+        <h1>ENGLISH SPARKS</h1>
+        <p>Your Daily Dose of English Fun!</p>
+    </header>
+
+    <main class="container">
+        
+        <a href="index.html" class="back-home">← Back to Main Hub</a>
+
+        <section class="content-block profile-section">
+            <div id="rotatingProfilePic" class="profile-img-box"></div>
+            <div class="profile-text">
+                <h2>Hi everyone!</h2>
+                <p>My name is <strong>Danesa Mae B. Latonio</strong>, but you can call me <strong>"Nesa"</strong> for short. I’m from the Philippines, and I’ve been teaching for 7 years now! Teaching is not just my profession—it’s my absolute passion.</p>
+                <p>I truly love working with students and helping them learn and grow. There is something incredibly special about seeing a student smile when they finally understand something new. That breakthrough moment always reminds me exactly why I chose this path.</p>
+                <p>Aside from teaching, I love learning about different cultures and meeting new people. I am thrilled to get to know all of you and to share many fun, educational experiences together. Let’s have a great time learning together!</p>
+            </div>
+        </section>
+
+        <section class="content-block">
+            <h3>My Teaching Philosophy</h3>
+            <p class="philosophy-text">
+                I firmly believe that all students can learn and grow with the right guidance and support. Every child brings unique strengths, experiences, and potential to the classroom, and it’s my mission to help each one thrive. Learning is not a one-size-fits-all process—it’s an individual journey that flourishes inside a supportive, respectful, and engaging environment.
+            </p>
+            <p class="philosophy-text">
+                To build a classroom where learning is joyful, respectful, and meaningful, I structure our everyday environment around three key principles:
+            </p>
+
+            <h4>✨ Try Our Best & Learn from Mistakes</h4>
+            <p class="philosophy-text">
+                We embrace a growth mindset by recognizing that mistakes are an important milestone in the learning journey. I actively encourage students to take creative risks, ask questions, and view challenges as opportunities. By putting forth their best effort and reflecting on their progress, students cultivate long-term resilience and deep self-confidence.
+            </p>
+
+            <h4>✨ Work Together & Help Each Other</h4>
+            <p class="philosophy-text">
+                Collaboration is the foundational key to a successful learning community. We learn best when we support one another, listen actively, and celebrate each other’s successes. Through group work, peer feedback, and cooperative projects, students develop crucial social and communication skills that extend far beyond the classroom.
+            </p>
+
+            <h4>✨ Create a Kind & Welcoming Space for Everyone</h4>
+            <p class="philosophy-text">
+                A safe, inclusive, and respectful environment is essential for meaningful language acquisition. In our classroom, every voice matters and everyone belongs. We honor individual differences, practice active empathy, and uphold kindness in all interactions, ensuring that each student feels valued and completely comfortable expressing themselves.
+            </p>
+        </section>
+
+        <section class="content-block">
+            <h3>Commitment to Teaching</h3>
+            <p class="philosophy-text">
+                I know that teaching can be both challenging and exhausting, but I am deeply committed to this profession because I believe in the transformative power of education. I am always willing to go above and beyond to create a classroom that is fun, inclusive, and academically enriching. 
+            </p>
+            <p class="philosophy-text">
+                I choose to stay reflective and open to continuous growth, constantly discovering new ways to inspire, motivate, and support my students as they gain confidence, curiosity, and excitement learning English every single day.
+            </p>
+        </section>
+
+        <section class="content-block">
+            <h3>How We Learn</h3>
+            <p class="philosophy-text">
+                I believe that language learning should be fun, meaningful, and deeply engaging. To keep our lessons interesting and enjoyable, I love incorporating these dynamic strategies into our classroom routine:
+            </p>
+            <ul class="fact-list">
+                <li><strong>Interactive ESL Media:</strong> Utilizing creative digital learning templates, structural language games, and custom elementary worksheets.</li>
+                <li><strong>Creative Arts & Play:</strong> Singing memorable songs, storytelling, and designing hands-on activities to keep energy high and retention strong.</li>
+                <li><strong>Holistic Activities:</strong> Linking real-world communication with physical teamwork, rhythm, and outdoor exploration.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const profilePictures = [
+                'profile.jpg',
+                'profile2.jpg',
+                'profile3.jpg',
+                'profile4.jpg',
+                'profile5.jpg'
+            ];
+            
+            let currentIndex = 0;
+            const profileImgBox = document.getElementById('rotatingProfilePic');
+            
+            // Instantly load the first profile picture when loading the page
+            profileImgBox.style.backgroundImage = `url('${profilePictures[currentIndex]}')`;
+            
+            // Loop switcher functionality
+            function changeImage() {
+                // Step 1: Smoothly fade out the profile element
+                profileImgBox.style.opacity = 0;
+                
+                // Step 2: Update image file behind the scenes while hidden, then fade it back in
+                setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % profilePictures.length;
+                    profileImgBox.style.backgroundImage = `url('${profilePictures[currentIndex]}')`;
+                    profileImgBox.style.opacity = 1;
+                }, 500); // 500ms coordinates perfectly with CSS opacity settings
+            }
+            
+            // Keeps running and swapping the picture automatically every 4 seconds
+            setInterval(changeImage, 4000);
+        });
+    </script>
+
+</body>
+</html>
