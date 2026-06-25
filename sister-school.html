@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sister School Program - English Spark</title>
+    <style>
+        /* Keeping your signature Professional Lavender Theme Palette */
+        :root {
+            --bg-main: #f4f0fa;
+            --bg-hero: #ffffff;
+            --title-amethyst: #5c3c85;
+            --accent-lavender: #8e70b8;
+            --highlight-sage: #3b7a3e;
+            --card-white: #ffffff;
+            --text-dark: #312a3a;
+            --border-soft: #eadef7;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Banner Style */
+        .intro-hero {
+            width: 100%;
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.75)), 
+                        url('english-spark-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            background-color: var(--bg-hero);
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 2px dashed var(--border-soft);
+        }
+
+        .intro-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--title-amethyst);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            padding: 40px 20px;
+        }
+
+        /* Back Button styled exactly like your homepage link */
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            background-color: var(--title-amethyst);
+            color: #ffffff;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            padding: 10px 20px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(92, 60, 133, 0.15);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .back-home:hover {
+            background-color: #ffffff;
+            color: var(--title-amethyst);
+            border: 2px solid var(--title-amethyst);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(92, 60, 133, 0.2);
+        }
+
+        .content-block {
+            background-color: var(--card-white);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(92, 60, 133, 0.05);
+            margin-bottom: 35px;
+            border: 1px solid rgba(234, 222, 247, 0.6);
+        }
+
+        .content-block h3 {
+            font-size: 1.7rem;
+            color: var(--title-amethyst);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--bg-main);
+            padding-bottom: 8px;
+        }
+
+        .highlight-statement {
+            font-family: 'Georgia', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            font-style: italic;
+            color: var(--highlight-sage);
+            display: block;
+            margin: 15px 0;
+        }
+
+        /* Video responsive container wrapper */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(92, 60, 133, 0.15);
+            margin: 25px 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .fact-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .fact-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .fact-list li::before {
+            content: "🌏";
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO BANNER -->
+    <header class="intro-hero">
+        <h1>Global Connections</h1>
+        <p style="font-size: 1.3rem; font-weight: 700; color: var(--accent-lavender);">Our Sister School Partnership Experience</p>
+    </header>
+
+    <main class="container">
+        
+        <!-- Back Button to return to your main introduction profile page -->
+        <a href="index.html" class="back-home">← Back to Profile</a>
+
+        <!-- VIDEO SPOTLIGHT BLOCK -->
+        <section class="content-block" style="text-align: center;">
+            <h3>Partnership in Action</h3>
+            <p>Watch our students interact, share cultural exchanges, and learn alongside international peers!</p>
+            
+            <div class="video-container">
+                <!-- Replace the URL below with your actual YouTube or Google Drive embed link! -->
+                <iframe 
+                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" 
+                    title="Sister School Program Exchange Video" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <!-- PROGRAM DETAILS BLOCK -->
+        <section class="content-block">
+            <h3>About the Program</h3>
+            <p>Our Bilingual Initiative proudly extends beyond our physical classroom walls. Through our intentional partnership networks, our elementary students gain rare, real-world opportunities to communicate authentically across borders.</p>
+            
+            <span class="highlight-statement">"Connecting our local sparks to make a global flame!"</span>
+            
+            <ul class="fact-list">
+                <li><strong>Cross-Cultural Pen Pals:</strong> Students write physical letters and digital postcards to practice context-rich reading and writing.</li>
+                <li><strong>Live Video Exchanges:</strong> Classrooms connect synchronously to sing cultural songs, play interactive language games, and perform spoken dialogue projects.</li>
+                <li><strong>Shared Collaborative Lessons:</strong> Co-teachers cross-plan thematic modules, comparing regional holidays, environments, and school daily routines.</li>
+            </ul>
+        </section>
+
+    </main>
+
+</body>
+</html>
