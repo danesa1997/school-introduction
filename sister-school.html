@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sister School Program - English Spark</title>
     <style>
-        /* Keeping your signature Professional Lavender Theme Palette */
+        /* Signature Professional Lavender Theme Palette */
         :root {
             --bg-main: #f4f0fa;
             --bg-hero: #ffffff;
@@ -56,12 +56,12 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             width: 100%;
             padding: 40px 20px;
         }
 
-        /* Back Button styled exactly like your homepage link */
+        /* Back Button */
         .back-home {
             display: inline-flex;
             align-items: center;
@@ -100,9 +100,15 @@
         .content-block h3 {
             font-size: 1.7rem;
             color: var(--title-amethyst);
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             border-bottom: 2px solid var(--bg-main);
             padding-bottom: 8px;
+        }
+
+        .activity-desc {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
         }
 
         .highlight-statement {
@@ -115,15 +121,34 @@
             margin: 15px 0;
         }
 
-        /* Video responsive container wrapper */
+        /* Video Layout Utilities */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 25px;
+        }
+
+        .single-video-wrapper {
+            max-width: 600px;
+            margin: 25px auto 0 auto;
+        }
+
+        .video-card {
+            background: #faf7fd;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid var(--border-soft);
+            box-shadow: 0 4px 10px rgba(92, 60, 133, 0.03);
+        }
+
         .video-container {
             position: relative;
             padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
             height: 0;
             overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(92, 60, 133, 0.15);
-            margin: 25px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(92, 60, 133, 0.1);
         }
 
         .video-container iframe {
@@ -133,6 +158,21 @@
             width: 100%;
             height: 100%;
             border: 0;
+        }
+
+        .school-tag {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--title-amethyst);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .school-location {
+            font-size: 0.9rem;
+            color: var(--accent-lavender);
+            font-weight: 600;
         }
 
         .fact-list {
@@ -165,26 +205,88 @@
 
     <main class="container">
         
-        <!-- Back Button to return to your main introduction profile page -->
+        <!-- Back Button -->
         <a href="index.html" class="back-home">← Back to Profile</a>
 
-        <!-- VIDEO SPOTLIGHT BLOCK -->
+        <!-- ACTIVITY 1: INTRODUCTIONS -->
         <section class="content-block" style="text-align: center;">
-            <h3>Partnership in Action</h3>
-            <p>Watch our students interact, share cultural exchanges, and learn alongside international peers!</p>
+            <h3>Activity 1: "Hello Friend!" – International Self-Introductions</h3>
+            <p class="activity-desc">Our Grade 6 students kicked off our global partnership project by sharing their daily lives, hobbies, and distinct school cultures through video diaries!</p>
             
-            <div class="video-container">
-                <!-- Replace the URL below with your actual YouTube or Google Drive embed link! -->
-                <iframe 
-                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" 
-                    title="Sister School Program Exchange Video" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
+            <div class="video-grid">
+                <!-- Taiwan Card -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe 
+                            src="https://drive.google.com/file/d/1Q7VZ40KNS9PvI2wlJ2Ny2SVuKK5ccAZo/preview" 
+                            title="Siang Tian Elementary School Introduction Video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="school-tag">Siang Tian Elementary School</p>
+                    <p class="school-location">Changhua County, Taiwan 🇹🇼</p>
+                </div>
+
+                <!-- Philippines Card -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe 
+                            src="https://drive.google.com/file/d/1DlsJg_JmcF6uuwBeb8Tg-fDw9TLwmcYU/preview" 
+                            title="Senior Tesoro Academy Introduction Video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="school-tag">Senior Tesoro Academy</p>
+                    <p class="school-location">The Philippines 🇵🇭</p>
+                </div>
             </div>
         </section>
 
-        <!-- PROGRAM DETAILS BLOCK -->
+        <!-- ACTIVITY 2: TAIWANESE SNACKS -->
+        <section class="content-block" style="text-align: center;">
+            <h3>Activity 2: A Taste of Taiwan – Cultural Food Exchange</h3>
+            <p class="activity-desc">Language is best shared over good food! In this activity, our students went hands-on into culinary arts, documenting how to prepare traditional local Taiwanese treats to share our flavors and culinary hospitality with our friends abroad.</p>
+            
+            <div class="single-video-wrapper">
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe 
+                            src="https://drive.google.com/file/d/1Eb3Q9Ocy5qmSA-nvJDcER4wjzgjm8Nt5/preview" 
+                            title="Preparing Taiwanese Snacks Video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="school-tag">Siang Tian Elementary School</p>
+                    <p class="school-location">Changhua County, Taiwan 🇹🇼</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACTIVITY 3: GRADUATION GIFT -->
+        <section class="content-block" style="text-align: center;">
+            <h3>Activity 3: Milestones & Memories – The Graduation Gift</h3>
+            <p class="activity-desc">Celebrating achievements together! Our Grade 6 students put their english presentation skills into practice to share a deeply personal and meaningful story explaining the background behind their local school graduation gifts.</p>
+            
+            <div class="single-video-wrapper">
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe 
+                            src="https://drive.google.com/file/d/1k2FgKOlFPjph7-Cj8LKan7w6w0MU95WZ/preview" 
+                            title="Graduation Gift Story Video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="school-tag">Siang Tian Elementary School</p>
+                    <p class="school-location">Changhua County, Taiwan 🇹🇼</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GENERAL PROGRAM DESCRIPTION -->
         <section class="content-block">
             <h3>About the Program</h3>
             <p>Our Bilingual Initiative proudly extends beyond our physical classroom walls. Through our intentional partnership networks, our elementary students gain rare, real-world opportunities to communicate authentically across borders.</p>
