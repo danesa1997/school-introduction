@@ -14,48 +14,75 @@
         }
 
         body {
-            background-color: #dbe4f9; /* Soft pastel blue background */
+            background: linear-gradient(135deg, #f0f4ff 0%, #dbe4f9 100%); /* Upgraded to soft modern gradient */
             color: #2d3748;
             line-height: 1.6;
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh;
         }
 
         /* Bright, Festive Header Banner */
         .spark-hero {
             width: 100%;
-            background: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.55)), 
-                        url('english-spark-banner.jpg');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(rgba(15, 76, 129, 0.75), rgba(15, 76, 129, 0.65)), 
+                        url('english-spark-banner.jpg') center/cover no-repeat;
             text-align: center;
-            padding: 100px 20px;
-            border-bottom: 2px dashed #b0c4de;
+            padding: 110px 20px;
+            border-bottom: 3px solid #2e5a1c;
         }
 
         .spark-hero h1 {
             font-size: 4.5rem;
             font-weight: 900;
-            color: #0f4c81; /* Deep rich blue title */
+            color: #ffffff; /* Swapped to white for beautiful contrast against dark overlay */
             letter-spacing: 2px;
             margin-bottom: 20px;
             text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .spark-hero p {
             font-size: 2.2rem;
             font-weight: 700;
-            color: #2e5a1c; /* Fun grass green font for the tagline */
+            color: #a3e635; /* Vibrant, joyful lime/green tag for high readability */
             max-width: 800px;
             margin: 0 auto;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         /* Main Content Container */
         .main-content {
-            max-width: 1000px;
+            max-width: 1050px;
             width: 100%;
             padding: 40px 20px;
+        }
+
+        /* Welcome Section Profile Row */
+        .welcome-section {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        }
+
+        .welcome-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #0f4c81;
+            flex-shrink: 0;
+        }
+
+        .welcome-text h2 {
+            color: #0f4c81;
+            margin-bottom: 8px;
         }
 
         /* Core Features Grid Section */
@@ -73,10 +100,15 @@
             text-align: center;
             box-shadow: 0 4px 15px rgba(15, 76, 129, 0.05);
             border: 1px solid rgba(176, 196, 222, 0.4);
+            transition: transform 0.2s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-3px);
         }
 
         .feature-icon {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 15px;
             display: inline-block;
         }
@@ -100,7 +132,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             position: relative;
         }
 
@@ -116,13 +148,13 @@
 
         /* Secondary Hub Title Color for Contrast */
         .bilingual-box .hub-title {
-            color: #5c3c85; /* Amethyst Purple accent to match your favorite lavender tones */
+            color: #5c3c85; 
         }
         .bilingual-box .hub-title::after {
             background-color: #8e70b8;
         }
 
-        /* Navigation Menu Boxes */
+        /* Navigation Grid Rows */
         .nav-row {
             display: flex;
             justify-content: center;
@@ -134,28 +166,56 @@
 
         /* Dashboard Container Boxes */
         .dashboard-box {
-            background-color: rgba(255, 255, 255, 0.6);
+            background-color: #ffffff; /* Made solid white to present card assets cleanly */
             border-radius: 16px;
-            padding: 40px 20px 20px 20px;
+            padding: 40px 24px;
             margin-bottom: 40px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            box-shadow: 0 10px 25px rgba(15, 76, 129, 0.04);
+            border: 1px solid #e2e8f0;
         }
 
-        .resources-box {
-            border: 2px dashed #b0c4de;
+        /* Visual Media Cards inside Hubs */
+        .visual-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            width: 280px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #edf2f7;
+            transition: all 0.3s ease;
         }
 
-        .bilingual-box {
-            border: 2px dashed #cbd5e1;
+        .visual-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-thumb {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            background-color: #e2e8f0; /* Soft fallback color if image fails */
+        }
+
+        .card-body {
+            padding: 15px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         /* Primary Large Buttons (Self Intro & My School) */
         .spark-btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             text-decoration: none;
             background-color: #0f4c81;
             color: #f7fafc;
-            text-align: center;
             padding: 18px 40px;
             font-size: 1.15rem;
             font-weight: 700;
@@ -163,7 +223,7 @@
             text-transform: uppercase;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(15, 76, 129, 0.15);
-            min-width: 280px;
+            min-width: 290px;
             border: 2px solid transparent;
             transition: all 0.3s ease-in-out;
         }
@@ -183,73 +243,82 @@
             background-color: #2e5a1c;
             color: #f7fafc;
             text-align: center;
-            padding: 15px 25px;
-            font-size: 1.05rem;
+            padding: 12px 20px;
+            font-size: 1rem;
             font-weight: 700;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(46, 90, 28, 0.15);
-            min-width: 250px;
+            border-radius: 6px;
+            box-shadow: 0 3px 8px rgba(46, 90, 28, 0.15);
+            width: 100%;
             border: 2px solid transparent;
-            transition: all 0.3s ease-in-out;
+            transition: all 0.2s ease-in-out;
         }
 
         .resource-btn:hover {
             background-color: #ffffff;
             color: #2e5a1c;
             border: 2px solid #2e5a1c;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(46, 90, 28, 0.25);
         }
 
         /* Purple Bilingual Buttons */
         .bilingual-btn {
             display: inline-block;
             text-decoration: none;
-            background-color: #5c3c85; /* Elegant Amethyst Purple */
+            background-color: #5c3c85;
             color: #f7fafc;
             text-align: center;
-            padding: 15px 25px;
-            font-size: 1.05rem;
+            padding: 12px 20px;
+            font-size: 0.95rem;
             font-weight: 700;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(92, 60, 133, 0.15);
-            min-width: 230px;
+            border-radius: 6px;
+            box-shadow: 0 3px 8px rgba(92, 60, 133, 0.15);
+            width: 100%;
             border: 2px solid transparent;
-            transition: all 0.3s ease-in-out;
+            transition: all 0.2s ease-in-out;
         }
 
         .bilingual-btn:hover {
             background-color: #ffffff;
             color: #5c3c85;
             border: 2px solid #5c3c85;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(92, 60, 133, 0.25);
         }
 
+        .btn-icon {
+            font-size: 1.4rem;
+            margin-right: 10px;
+        }
+
+        /* Responsive Design Rules */
         @media (max-width: 768px) {
             .spark-hero h1 { font-size: 2.8rem; }
             .spark-hero p { font-size: 1.5rem; }
-            .spark-btn, .resource-btn, .bilingual-btn { width: 100%; min-width: 100%; }
+            .welcome-section { flex-direction: column; text-align: center; }
+            .spark-btn { width: 100%; min-width: 100%; }
+            .visual-card { width: 100%; }
             .main-content { padding: 20px 15px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HERO BANNER -->
     <header class="spark-hero">
         <h1>English Spark</h1>
         <p>Your Daily Dose of English Fun!</p>
     </header>
 
-    <!-- MAIN CONTENT LAYOUT -->
     <main class="main-content">
 
-        <!-- VISUAL CORE PILLARS SECTION -->
+        <section class="welcome-section">
+            <img src="teacher-profile.jpg" alt="Welcome to English Spark" class="welcome-avatar">
+            <div class="welcome-text">
+                <h2>Welcome to Our Learning Hub! ✨</h2>
+                <p>Hello! I'm thrilled to have you here. Explore interactive games, structural lesson updates, and exciting global school initiatives designed to make English learning memorable and joyful.</p>
+            </div>
+        </section>
+
         <section class="features-grid">
             <div class="feature-card">
                 <span class="feature-icon">👩‍🏫</span>
@@ -262,36 +331,81 @@
                 <p>Engaging digital learning templates, structural language games, and custom elementary worksheets designed for joyful participation.</p>
             </div>
             <div class="feature-card">
-                <span class="feature-icon">✨</span>
+                <span class="feature-icon">🚀</span>
                 <h3>Active Learning</h3>
                 <p>Creating a kind, supportive, and welcoming space where creative risks are encouraged and mistakes are celebrated.</p>
             </div>
         </section>
 
-        <!-- TOP LEVEL NAVIGATION BUTTONS -->
         <div class="nav-row">
-            <a href="introduction.html" class="spark-btn">Self Introduction</a>
-            <a href="school.html" class="spark-btn">My School</a>
+            <a href="introduction.html" class="spark-btn">
+                <span class="btn-icon">👋</span>Self Introduction
+            </a>
+            <a href="school.html" class="spark-btn">
+                <span class="btn-icon">🏫</span>My School
+            </a>
         </div>
 
-        <!-- TEACHING RESOURCES HUB BOX -->
-        <section class="dashboard-box resources-box">
+        <section class="dashboard-box">
             <h2 class="hub-title">Teaching Resources</h2>
-            <div class="nav-row" style="margin-bottom: 10px;">
-                <a href="media.html" class="resource-btn">Videos & Photos</a>
-                <a href="activities.html" class="resource-btn">Interactive Activities</a>
-                <a href="others.html" class="resource-btn">Others</a>
+            <div class="nav-row" style="margin-bottom: 10px; gap: 25px;">
+                
+                <div class="visual-card">
+                    <img src="thumb-media.jpg" alt="Videos & Photos Preview" class="card-thumb">
+                    <div class="card-body">
+                        <a href="media.html" class="resource-btn">Videos & Photos</a>
+                    </div>
+                </div>
+
+                <div class="visual-card">
+                    <img src="thumb-activities.jpg" alt="Interactive Activities Preview" class="card-thumb">
+                    <div class="card-body">
+                        <a href="activities.html" class="resource-btn">Interactive Activities</a>
+                    </div>
+                </div>
+
+                <div class="visual-card">
+                    <img src="thumb-others.jpg" alt="Other Resources Preview" class="card-thumb">
+                    <div class="card-body">
+                        <a href="others.html" class="resource-btn">Others</a>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- BILINGUAL INITIATIVES HUB BOX -->
         <section class="dashboard-box bilingual-box">
             <h2 class="hub-title">Bilingual Initiatives</h2>
-            <div class="nav-row" style="margin-bottom: 10px;">
-                <a href="weekly-sentence.html" class="bilingual-btn">Weekly English Sentence</a>
-                <a href="classroom-english.html" class="bilingual-btn">Classroom English</a>
-                <a href="sister-school.html" class="bilingual-btn">Sister School Program</a>
-                <a href="school-tour.html" class="bilingual-btn">School Tour</a>
+            <div class="nav-row" style="margin-bottom: 10px; gap: 25px;">
+                
+                <div class="visual-card">
+                    <img src="thumb-weekly.jpg" alt="Weekly Sentence Preview" class="card-thumb">
+                    <div class="card-body">
+                        <a href="weekly-sentence.html" class="bilingual-btn">Weekly English Sentence</a>
+                    </div>
+                </div>
+
+                <div class="visual-card">
+                    <img src="thumb-classroom.jpg" alt="Classroom English Preview" class="card-thumb">
+                    <div class="card-body">
+                        <a href="classroom-english.html" class="bilingual-btn">Classroom English</a>
+                    </div>
+                </div>
+
+                <div class="visual-card">
+                    <img src="thumb-sister.jpg" alt="Sister School Program Preview" class="card-thumb">
+                    <div class="card-body">
+                        <a href="sister-school.html" class="bilingual-btn">Sister School Program</a>
+                    </div>
+                </div>
+
+                <div class="visual-card">
+                    <img src="thumb-tour.jpg" alt="School Tour Preview" class="card-thumb">
+                    <div class="card-body">
+                        <a href="school-tour.html" class="bilingual-btn">School Tour</a>
+                    </div>
+                </div>
+
             </div>
         </section>
 
