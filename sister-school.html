@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sister School Program - English Spark</title>
+    <title>Siang Tian Elementary School</title>
     <style>
-        /* Signature Professional Lavender Theme Palette */
+        /* Core Styling & Color Palette */
         :root {
-            --bg-main: #f4f0fa;
-            --bg-hero: #ffffff;
-            --title-amethyst: #5c3c85;
-            --accent-lavender: #8e70b8;
-            --highlight-sage: #3b7a3e;
+            --primary-green: #1b4d3e; /* Deep Forest Green */
+            --accent-green: #2e7d32; /* Leaf Green */
+            --super-light-green: #f0f9f4; /* Super Duper Light Mint Background */
             --card-white: #ffffff;
-            --text-dark: #312a3a;
-            --border-soft: #eadef7;
+            --text-dark: #2d3748;
+            --text-light: #5a6a85;
         }
 
         * {
@@ -25,279 +23,356 @@
         }
 
         body {
-            background-color: var(--bg-main);
+            background-color: var(--super-light-green);
             color: var(--text-dark);
             line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
-        /* Banner Style */
-        .intro-hero {
-            width: 100%;
-            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.75)), 
-                        url('english-spark-banner.jpg');
+        /* Hero Header Banner with Light Overlay & Bigger Text */
+        .hero {
+            background: linear-gradient(rgba(46, 125, 50, 0.40), rgba(27, 77, 62, 0.55)), 
+                        url('school-banner.jpg');
             background-size: cover;
             background-position: center;
-            background-color: var(--bg-hero);
+            color: white;
             text-align: center;
-            padding: 60px 20px;
-            border-bottom: 2px dashed var(--border-soft);
+            padding: 120px 20px;
         }
 
-        .intro-hero h1 {
-            font-size: 3rem;
+        .hero h1 {
+            font-size: 3.8rem;
             font-weight: 800;
-            color: var(--title-amethyst);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
         }
 
-        .container {
-            max-width: 1000px;
-            width: 100%;
-            padding: 40px 20px;
+        .hero h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
         }
 
-        /* Back Button */
-        .back-home {
+        .hero p {
+            max-width: 850px;
+            margin: 0 auto 40px auto;
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1.8;
+            opacity: 1;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Button Container */
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* Shared Button Styles */
+        .btn {
             display: inline-flex;
             align-items: center;
+            gap: 8px;
             text-decoration: none;
-            background-color: var(--title-amethyst);
-            color: #ffffff;
+            padding: 14px 32px;
+            font-size: 16px;
             font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            padding: 10px 20px;
-            border-radius: 6px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(92, 60, 133, 0.15);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.2s ease-in-out;
         }
 
-        .back-home:hover {
-            background-color: #ffffff;
-            color: var(--title-amethyst);
-            border: 2px solid var(--title-amethyst);
+        .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(92, 60, 133, 0.2);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
 
-        .content-block {
-            background-color: var(--card-white);
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 4px 15px rgba(92, 60, 133, 0.05);
-            margin-bottom: 35px;
-            border: 1px solid rgba(234, 222, 247, 0.6);
+        /* Facebook Button */
+        .fb-button {
+            background-color: #1877f2;
+            color: white;
         }
 
-        .content-block h3 {
-            font-size: 1.7rem;
-            color: var(--title-amethyst);
-            margin-bottom: 10px;
-            border-bottom: 2px solid var(--bg-main);
-            padding-bottom: 8px;
+        .fb-button:hover {
+            background-color: #1565c0;
         }
 
-        .activity-desc {
-            font-size: 1.1rem;
-            color: var(--text-dark);
-            margin-bottom: 20px;
+        /* Google Maps Button */
+        .maps-button {
+            background-color: #ffffff;
+            color: var(--primary-green);
         }
 
-        .highlight-statement {
-            font-family: 'Georgia', Georgia, serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            font-style: italic;
-            color: var(--highlight-sage);
+        .maps-button:hover {
+            background-color: #f7fafc;
+        }
+
+        /* Section Layouts */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-green);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
             display: block;
-            margin: 15px 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-green);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
         }
 
-        /* Video Layout Utilities */
-        .video-grid {
+        /* Grid for Feature Activities */
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
-            margin-top: 25px;
         }
 
-        .single-video-wrapper {
-            max-width: 600px;
-            margin: 25px auto 0 auto;
-        }
-
-        .video-card {
-            background: #faf7fd;
-            padding: 15px;
+        /* Clickable Card Link Wrapper */
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
             border-radius: 12px;
-            border: 1px solid var(--border-soft);
-            box-shadow: 0 4px 10px rgba(92, 60, 133, 0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
+        .card {
+            background-color: var(--card-white);
+            border-radius: 12px;
             overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(92, 60, 133, 0.1);
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
             height: 100%;
-            border: 0;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid transparent;
+            transition: border-color 0.3s ease;
         }
 
-        .school-tag {
-            margin-top: 15px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--title-amethyst);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .card-link:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-link:hover .card {
+            box-shadow: 0 12px 25px rgba(27, 77, 62, 0.12);
+            border-color: var(--accent-green);
         }
 
-        .school-location {
-            font-size: 0.9rem;
-            color: var(--accent-lavender);
-            font-weight: 600;
+        .card-link:focus-visible {
+            outline: 3px solid var(--accent-green);
+            outline-offset: 5px;
+            border-radius: 12px;
         }
 
-        .fact-list {
-            list-style: none;
-            margin-top: 15px;
+        /* Image Box Setup */
+        .card-img-box {
+            width: 100%;
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            background-color: #e2e8f0;
         }
 
-        .fact-list li {
-            position: relative;
-            padding-left: 30px;
+        .card-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-content h3 {
+            font-size: 1.3rem;
+            color: var(--primary-green);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
             margin-bottom: 15px;
-            font-size: 1.05rem;
         }
 
-        .fact-list li::before {
-            content: "🌏";
-            position: absolute;
-            left: 0;
-            top: 2px;
+        .view-more-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-green);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: auto;
+        }
+
+        .card-link:hover .view-more-label {
+            text-decoration: underline;
+        }
+
+        /* Mission & Vision Styling */
+        .mv-section {
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 16px;
+            padding: 50px;
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            box-shadow: 0 10px 30px rgba(27, 77, 62, 0.15);
+        }
+
+        .mv-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #fff;
+            border-left: 4px solid #fff;
+            padding-left: 12px;
+        }
+
+        .mv-box p {
+            opacity: 0.9;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero h2 { font-size: 1.2rem; }
+            .hero p { font-size: 1.1rem; }
+            .mv-section { padding: 30px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HERO BANNER -->
-    <header class="intro-hero">
-        <h1>Global Connections</h1>
-        <p style="font-size: 1.3rem; font-weight: 700; color: var(--accent-lavender);">Our Sister School Partnership Experience</p>
+    <!-- HERO HEADER BANNER WITH LIGHT OVERLAY AND LARGE FONT -->
+    <header class="hero">
+        <h1>Welcome to Siang Tian Elementary School</h1>
+        <h2>Erlin Township, Changhua County, Taiwan</h2>
+        <p>Siang Tian Elementary School is a rural ecological school located in Erlin Township, Changhua County, Taiwan. Surrounded by beautiful farmland and nature, we provide students with meaningful learning experiences both inside and outside the classroom.</p>
+        
+        <!-- Button Action Group -->
+        <div class="button-group">
+            <a href="https://www.facebook.com/SiangTain" target="_blank" rel="noopener noreferrer" class="btn fb-button">
+                📱 Visit Our Facebook Page
+            </a>
+
+            <a href="https://www.google.com/maps/place/No.+10-1,+Rulin+Rd,+Xiangtian+Village,+Erlin+Township,+Changhua+County,+526/@23.8741882,120.3736913,17z/data=!3m1!4b1!4m6!3m5!1s0x346eb2c51c49122f:0xe99804368acb2864!8m2!3d23.8741882!4d120.3762662!16s%2Fg%2F11c1zfrcrp" target="_blank" rel="noopener noreferrer" class="btn maps-button">
+                📍 View School Map Location
+            </a>
+        </div>
     </header>
 
     <main class="container">
         
-        <!-- Back Button -->
-        <a href="index.html" class="back-home">← Back to Profile</a>
-
-        <!-- ACTIVITY 1: INTRODUCTIONS -->
-        <section class="content-block" style="text-align: center;">
-            <h3>Activity 1: "Hello Friend!" – International Self-Introductions</h3>
-            <p class="activity-desc">Our Grade 6 students kicked off our global partnership project by sharing their daily lives, hobbies, and distinct school cultures through video diaries!</p>
-            
-            <div class="video-grid">
-                <!-- Taiwan Card -->
-                <div class="video-card">
-                    <div class="video-container">
-                        <iframe 
-                            src="https://drive.google.com/file/d/1Q7VZ40KNS9PvI2wlJ2Ny2SVuKK5ccAZo/preview" 
-                            title="Siang Tian Elementary School Introduction Video"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
+        <!-- FEATURED ACTIVITIES SECTION -->
+        <section>
+            <h2 class="section-title">Our 特色 Activities</h2>
+            <div class="grid">
+                
+                <!-- Soccer Button Card -->
+                <a href="soccer.html" class="card-link" aria-label="View more details about the Soccer activity">
+                    <div class="card">
+                        <div class="card-img-box" style="background-image: url('soccer.jpg');"></div>
+                        <div class="card-content">
+                            <h3>⚽ Soccer</h3>
+                            <p>Students develop teamwork, sportsmanship, and physical fitness through training and competitions.</p>
+                            <span class="view-more-label">View Details →</span>
+                        </div>
                     </div>
-                    <p class="school-tag">Siang Tian Elementary School</p>
-                    <p class="school-location">Changhua County, Taiwan 🇹🇼</p>
-                </div>
+                </a>
 
-                <!-- Philippines Card -->
-                <div class="video-card">
-                    <div class="video-container">
-                        <iframe 
-                            src="https://drive.google.com/file/d/1DlsJg_JmcF6uuwBeb8Tg-fDw9TLwmcYU/preview" 
-                            title="Senior Tesoro Academy Introduction Video"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
+                <!-- Rock Climbing Button Card -->
+                <a href="climbing.html" class="card-link" aria-label="View more details about the Rock Climbing activity">
+                    <div class="card">
+                        <div class="card-img-box" style="background-image: url('climbing.jpg');"></div>
+                        <div class="card-content">
+                            <h3>🧗 Rock Climbing</h3>
+                            <p>Students challenge themselves while building courage, confidence, and problem-solving skills.</p>
+                            <span class="view-more-label">View Details →</span>
+                        </div>
                     </div>
-                    <p class="school-tag">Senior Tesoro Academy</p>
-                    <p class="school-location">The Philippines 🇵🇭</p>
-                </div>
+                </a>
+
+                <!-- Unicycle Button Card -->
+                <a href="unicycle.html" class="card-link" aria-label="View more details about the Unicycle activity">
+                    <div class="card">
+                        <div class="card-img-box" style="background-image: url('unicycle.jpg');"></div>
+                        <div class="card-content">
+                            <h3>🚲 Unicycle</h3>
+                            <p>Students improve balance, coordination, and perseverance through regular practice and performances.</p>
+                            <span class="view-more-label">View Details →</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Music (Harmonica & Violin) Button Card -->
+                <a href="music.html" class="card-link" aria-label="View more details about our Music programs">
+                    <div class="card">
+                        <div class="card-img-box" style="background-image: url('music.jpg');"></div>
+                        <div class="card-content">
+                            <h3>🎵 Music & Arts</h3>
+                            <p>Students develop musical talents, creativity, and self-expression through our specialized harmonica and violin programs.</p>
+                            <span class="view-more-label">View Details →</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Rice Field Learning Button Card -->
+                <a href="rice-field.html" class="card-link" aria-label="View more details about the Rice Field Learning activity">
+                    <div class="card">
+                        <div class="card-img-box" style="background-image: url('rice-field.jpg');"></div>
+                        <div class="card-content">
+                            <h3>🌾 Rice Field Learning</h3>
+                            <p>Students experience planting and harvesting rice while learning about agriculture, sustainability, and local culture.</p>
+                            <span class="view-more-label">View Details →</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Bilingual Education Button Card (Updated Link) -->
+                <a href="sister-school.html" class="card-link" aria-label="View more details about the Sister School Program">
+                    <div class="card">
+                        <div class="card-img-box" style="background-image: url('bilingual.jpg');"></div>
+                        <div class="card-content">
+                            <h3>🌍 Bilingual Education</h3>
+                            <p>Students strengthen their English communication skills and develop a broader understanding of the world.</p>
+                            <span class="view-more-label">View Details →</span>
+                        </div>
+                    </div>
+                </a>
+
             </div>
         </section>
 
-        <!-- ACTIVITY 2: TAIWANESE SNACKS -->
-        <section class="content-block" style="text-align: center;">
-            <h3>Activity 2: A Taste of Taiwan – Cultural Food Exchange</h3>
-            <p class="activity-desc">Language is best shared over good food! In this activity, our students went hands-on into culinary arts, documenting how to prepare traditional local Taiwanese treats to share our flavors and culinary hospitality with our friends abroad.</p>
-            
-            <div class="single-video-wrapper">
-                <div class="video-card">
-                    <div class="video-container">
-                        <iframe 
-                            src="https://drive.google.com/file/d/1Eb3Q9Ocy5qmSA-nvJDcER4wjzgjm8Nt5/preview" 
-                            title="Preparing Taiwanese Snacks Video"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                    <p class="school-tag">Siang Tian Elementary School</p>
-                    <p class="school-location">Changhua County, Taiwan 🇹🇼</p>
-                </div>
+        <!-- MISSION & VISION SECTION -->
+        <section class="mv-section">
+            <div class="mv-box">
+                <h3>Our Mission</h3>
+                <p>To provide a caring and inspiring learning environment where every child can learn, grow, and achieve their full potential.</p>
             </div>
-        </section>
-
-        <!-- ACTIVITY 3: GRADUATION GIFT -->
-        <section class="content-block" style="text-align: center;">
-            <h3>Activity 3: Milestones & Memories – The Graduation Gift</h3>
-            <p class="activity-desc">Celebrating achievements together! Our Grade 6 students put their english presentation skills into practice to share a deeply personal and meaningful story explaining the background behind their local school graduation gifts.</p>
-            
-            <div class="single-video-wrapper">
-                <div class="video-card">
-                    <div class="video-container">
-                        <iframe 
-                            src="https://drive.google.com/file/d/1k2FgKOlFPjph7-Cj8LKan7w6w0MU95WZ/preview" 
-                            title="Graduation Gift Story Video"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                    <p class="school-tag">Siang Tian Elementary School</p>
-                    <p class="school-location">Changhua County, Taiwan 🇹🇼</p>
-                </div>
+            <div class="mv-box">
+                <h3>Our Vision</h3>
+                <p>To cultivate confident, responsible, compassionate, and lifelong learners who contribute positively to their community and the world.</p>
             </div>
-        </section>
-
-        <!-- GENERAL PROGRAM DESCRIPTION -->
-        <section class="content-block">
-            <h3>About the Program</h3>
-            <p>Our Bilingual Initiative proudly extends beyond our physical classroom walls. Through our intentional partnership networks, our elementary students gain rare, real-world opportunities to communicate authentically across borders.</p>
-            
-            <span class="highlight-statement">"Connecting our local sparks to make a global flame!"</span>
-            
-            <ul class="fact-list">
-                <li><strong>Cross-Cultural Pen Pals:</strong> Students write physical letters and digital postcards to practice context-rich reading and writing.</li>
-                <li><strong>Live Video Exchanges:</strong> Classrooms connect synchronously to sing cultural songs, play interactive language games, and perform spoken dialogue projects.</li>
-                <li><strong>Shared Collaborative Lessons:</strong> Co-teachers cross-plan thematic modules, comparing regional holidays, environments, and school daily routines.</li>
-            </ul>
         </section>
 
     </main>
