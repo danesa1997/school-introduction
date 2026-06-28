@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siang Tian Elementary School</title>
+    <title>Sister School Partnership Program - Siang Tian</title>
     <style>
-        /* Core Styling & Color Palette */
+        /* Core Styling & Color Palette (Amethyst & Lavender Theme) */
         :root {
-            --primary-green: #1b4d3e; /* Deep Forest Green */
-            --accent-green: #2e7d32; /* Leaf Green */
-            --super-light-green: #f0f9f4; /* Super Duper Light Mint Background */
+            --primary-purple: #4a148c; /* Deep Amethyst */
+            --accent-purple: #7b1fa2; /* Vibrant Lavender */
+            --light-bg: #f3e5f5; /* Soft Lavender Tint Background */
             --card-white: #ffffff;
             --text-dark: #2d3748;
-            --text-light: #5a6a85;
+            --text-light: #6a7b95;
         }
 
         * {
@@ -23,358 +23,219 @@
         }
 
         body {
-            background-color: var(--super-light-green);
+            background-color: var(--light-bg);
             color: var(--text-dark);
             line-height: 1.6;
         }
 
-        /* Hero Header Banner with Light Overlay & Bigger Text */
-        .hero {
-            background: linear-gradient(rgba(46, 125, 50, 0.40), rgba(27, 77, 62, 0.55)), 
-                        url('school-banner.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 120px 20px;
+        /* Header Navigation Styles */
+        .nav-header {
+            background-color: var(--primary-purple);
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .hero h1 {
-            font-size: 3.8rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-            letter-spacing: 0.5px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-        }
-
-        .hero h2 {
-            font-size: 1.6rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
-        }
-
-        .hero p {
-            max-width: 850px;
-            margin: 0 auto 40px auto;
-            font-size: 1.25rem;
-            font-weight: 500;
-            line-height: 1.8;
-            opacity: 1;
-            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
-        }
-
-        /* Button Container */
-        .button-group {
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
+            align-items: center;
         }
 
-        /* Shared Button Styles */
-        .btn {
+        .btn-back {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            text-decoration: none;
-            padding: 14px 32px;
-            font-size: 16px;
-            font-weight: 700;
-            border-radius: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            transition: all 0.2s ease-in-out;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-        }
-
-        /* Facebook Button */
-        .fb-button {
-            background-color: #1877f2;
             color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.15);
+            transition: background 0.2s ease;
         }
 
-        .fb-button:hover {
-            background-color: #1565c0;
+        .btn-back:hover {
+            background-color: rgba(255, 255, 255, 0.3);
         }
 
-        /* Google Maps Button */
-        .maps-button {
-            background-color: #ffffff;
-            color: var(--primary-green);
+        /* Global Program Summary Banner */
+        .summary-banner {
+            max-width: 1200px;
+            margin: 40px auto 20px auto;
+            padding: 0 20px;
         }
 
-        .maps-button:hover {
-            background-color: #f7fafc;
+        .summary-card {
+            background-color: var(--card-white);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(74, 20, 140, 0.05);
+            border-left: 6px solid var(--accent-purple);
         }
 
-        /* Section Layouts */
+        .summary-card h1 {
+            color: var(--primary-purple);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .summary-card p {
+            color: var(--text-dark);
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        /* Video Showcase Layout Grid */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 40px 20px 60px 20px;
         }
 
         .section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--primary-green);
-            margin-bottom: 40px;
+            font-size: 1.8rem;
+            color: var(--primary-purple);
+            margin-bottom: 30px;
             position: relative;
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background-color: var(--accent-green);
-            margin: 10px auto 0 auto;
-            border-radius: 2px;
-        }
-
-        /* Grid for Feature Activities */
-        .grid {
+        .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 35px;
         }
 
-        /* Clickable Card Link Wrapper */
-        .card-link {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            border-radius: 12px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        @media (max-width: 500px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .card {
+        /* Activity Video Cards */
+        .video-card {
             background-color: var(--card-white);
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-            height: 100%;
             display: flex;
             flex-direction: column;
-            border: 1px solid transparent;
-            transition: border-color 0.3s ease;
         }
 
-        .card-link:hover {
-            transform: translateY(-5px);
-        }
-        
-        .card-link:hover .card {
-            box-shadow: 0 12px 25px rgba(27, 77, 62, 0.12);
-            border-color: var(--accent-green);
-        }
-
-        .card-link:focus-visible {
-            outline: 3px solid var(--accent-green);
-            outline-offset: 5px;
-            border-radius: 12px;
+        /* Responsive Video Embed Container */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            background-color: #000;
         }
 
-        /* Image Box Setup */
-        .card-img-box {
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 220px;
-            background-size: cover;
-            background-position: center;
-            background-color: #e2e8f0;
+            height: 100%;
+            border: 0;
         }
 
-        .card-content {
+        .video-info {
             padding: 25px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
         }
 
-        .card-content h3 {
+        .video-info h3 {
             font-size: 1.3rem;
-            color: var(--primary-green);
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            color: var(--primary-purple);
+            margin-bottom: 10px;
         }
 
-        .card-content p {
+        .video-info p {
             color: var(--text-light);
             font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
-
-        .view-more-label {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--accent-green);
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            margin-top: auto;
-        }
-
-        .card-link:hover .view-more-label {
-            text-decoration: underline;
-        }
-
-        /* Mission & Vision Styling */
-        .mv-section {
-            background-color: var(--primary-green);
-            color: white;
-            border-radius: 16px;
-            padding: 50px;
-            margin-top: 50px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            box-shadow: 0 10px 30px rgba(27, 77, 62, 0.15);
-        }
-
-        .mv-box h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #fff;
-            border-left: 4px solid #fff;
-            padding-left: 12px;
-        }
-
-        .mv-box p {
-            opacity: 0.9;
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .hero h2 { font-size: 1.2rem; }
-            .hero p { font-size: 1.1rem; }
-            .mv-section { padding: 30px; }
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
 
-    <!-- HERO HEADER BANNER WITH LIGHT OVERLAY AND LARGE FONT -->
-    <header class="hero">
-        <h1>Welcome to Siang Tian Elementary School</h1>
-        <h2>Erlin Township, Changhua County, Taiwan</h2>
-        <p>Siang Tian Elementary School is a rural ecological school located in Erlin Township, Changhua County, Taiwan. Surrounded by beautiful farmland and nature, we provide students with meaningful learning experiences both inside and outside the classroom.</p>
-        
-        <!-- Button Action Group -->
-        <div class="button-group">
-            <a href="https://www.facebook.com/SiangTain" target="_blank" rel="noopener noreferrer" class="btn fb-button">
-                📱 Visit Our Facebook Page
-            </a>
-
-            <a href="https://www.google.com/maps/place/No.+10-1,+Rulin+Rd,+Xiangtian+Village,+Erlin+Township,+Changhua+County,+526/@23.8741882,120.3736913,17z/data=!3m1!4b1!4m6!3m5!1s0x346eb2c51c49122f:0xe99804368acb2864!8m2!3d23.8741882!4d120.3762662!16s%2Fg%2F11c1zfrcrp" target="_blank" rel="noopener noreferrer" class="btn maps-button">
-                📍 View School Map Location
+    <!-- TOP NAVIGATION -->
+    <header class="nav-header">
+        <div class="nav-container">
+            <!-- Assuming your main page is index.html -->
+            <a href="index.html" class="btn-back" aria-label="Return to the school main page">
+                ← Back to Main Page
             </a>
         </div>
     </header>
 
+    <!-- GLOBAL PROGRAM SUMMARY -->
+    <section class="summary-banner">
+        <div class="summary-card">
+            <h1>🌍 Sister School Program</h1>
+            <p>Our Bilingual Education program proudly extends into global partnerships. Through our Sister School Program, students at Siang Tian Elementary School connect with international peers to exchange cultural traditions, practice real-world language skills, and collaborate on shared learning experiences that broaden their global horizons.</p>
+        </div>
+    </section>
+
+    <!-- FOUR SEPARATE ACTIVITY VIDEOS SHOWCASE -->
     <main class="container">
+        <h2 class="section-title">Recent Partnership Activities</h2>
         
-        <!-- FEATURED ACTIVITIES SECTION -->
-        <section>
-            <h2 class="section-title">Our 特色 Activities</h2>
-            <div class="grid">
-                
-                <!-- Soccer Button Card -->
-                <a href="soccer.html" class="card-link" aria-label="View more details about the Soccer activity">
-                    <div class="card">
-                        <div class="card-img-box" style="background-image: url('soccer.jpg');"></div>
-                        <div class="card-content">
-                            <h3>⚽ Soccer</h3>
-                            <p>Students develop teamwork, sportsmanship, and physical fitness through training and competitions.</p>
-                            <span class="view-more-label">View Details →</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Rock Climbing Button Card -->
-                <a href="climbing.html" class="card-link" aria-label="View more details about the Rock Climbing activity">
-                    <div class="card">
-                        <div class="card-img-box" style="background-image: url('climbing.jpg');"></div>
-                        <div class="card-content">
-                            <h3>🧗 Rock Climbing</h3>
-                            <p>Students challenge themselves while building courage, confidence, and problem-solving skills.</p>
-                            <span class="view-more-label">View Details →</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Unicycle Button Card -->
-                <a href="unicycle.html" class="card-link" aria-label="View more details about the Unicycle activity">
-                    <div class="card">
-                        <div class="card-img-box" style="background-image: url('unicycle.jpg');"></div>
-                        <div class="card-content">
-                            <h3>🚲 Unicycle</h3>
-                            <p>Students improve balance, coordination, and perseverance through regular practice and performances.</p>
-                            <span class="view-more-label">View Details →</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Music (Harmonica & Violin) Button Card -->
-                <a href="music.html" class="card-link" aria-label="View more details about our Music programs">
-                    <div class="card">
-                        <div class="card-img-box" style="background-image: url('music.jpg');"></div>
-                        <div class="card-content">
-                            <h3>🎵 Music & Arts</h3>
-                            <p>Students develop musical talents, creativity, and self-expression through our specialized harmonica and violin programs.</p>
-                            <span class="view-more-label">View Details →</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Rice Field Learning Button Card -->
-                <a href="rice-field.html" class="card-link" aria-label="View more details about the Rice Field Learning activity">
-                    <div class="card">
-                        <div class="card-img-box" style="background-image: url('rice-field.jpg');"></div>
-                        <div class="card-content">
-                            <h3>🌾 Rice Field Learning</h3>
-                            <p>Students experience planting and harvesting rice while learning about agriculture, sustainability, and local culture.</p>
-                            <span class="view-more-label">View Details →</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Bilingual Education Button Card -->
-                <a href="bilingual.html" class="card-link" aria-label="View more details about the Bilingual Education activity">
-                    <div class="card">
-                        <div class="card-img-box" style="background-image: url('bilingual.jpg');"></div>
-                        <div class="card-content">
-                            <h3>🌍 Bilingual Education</h3>
-                            <p>Students strengthen their English communication skills and develop a broader understanding of the world.</p>
-                            <span class="view-more-label">View Details →</span>
-                        </div>
-                    </div>
-                </a>
-
+        <div class="video-grid">
+            
+            <!-- Activity 1: Student Introductions -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <!-- Replace the src URL inside the quotes with your Google Drive preview link -->
+                    <iframe src="https://id.google.com/mock/video1/preview" allow="autoplay" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>👋 Activity 1: Getting to Know Our Peers</h3>
+                    <p>Students from both schools recorded creative introduction messages, sharing details about their names, hobbies, daily school schedules, and local life in Changhua County to build an initial cultural connection.</p>
+                </div>
             </div>
-        </section>
 
-        <!-- MISSION & VISION SECTION -->
-        <section class="mv-section">
-            <div class="mv-box">
-                <h3>Our Mission</h3>
-                <p>To provide a caring and inspiring learning environment where every child can learn, grow, and achieve their full potential.</p>
+            <!-- Activity 2: Cultural Food Exchange -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <!-- Replace the src URL inside the quotes with your Google Drive preview link -->
+                    <iframe src="https://id.google.com/mock/video2/preview" allow="autoplay" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>🍲 Activity 2: Local Culinary Traditions</h3>
+                    <p>A fun video presentation highlighting favorite local Taiwanese dishes and school lunches. Students explored culinary similarities and differences with our international partner school peers.</p>
+                </div>
             </div>
-            <div class="mv-box">
-                <h3>Our Vision</h3>
-                <p>To cultivate confident, responsible, compassionate, and lifelong learners who contribute positively to their community and the world.</p>
-            </div>
-        </section>
 
+            <!-- Activity 3: Campus Tour & Environment -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <!-- Replace the src URL inside the quotes with your Google Drive preview link -->
+                    <iframe src="https://id.google.com/mock/video3/preview" allow="autoplay" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>🏫 Activity 3: Walking Through Siang Tian</h3>
+                    <p>Our students guided their sister school friends on a completely bilingual virtual campus tour, proudly showcasing our beautiful rural ecological features, gardens, and unique open learning spaces.</p>
+                </div>
+            </div>
+
+            <!-- Activity 4: Graduation Gift Presentation -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <!-- Replace the src URL inside the quotes with your Google Drive preview link -->
+                    <iframe src="https://id.google.com/mock/video4/preview" allow="autoplay" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>🎁 Activity 4: Celebration & Gift Exchange</h3>
+                    <p>A heartwarming recap of the final milestone exchange where student representatives presented handmade graduation gifts and custom keepsakes to commemorate our partnership milestones.</p>
+                </div>
+            </div>
+
+        </div>
     </main>
 
 </body>
